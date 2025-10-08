@@ -1,0 +1,29 @@
+{
+  "kind": "collectionType",
+  "collectionName": "sub_contractor_groups",
+  "info": {
+    "singularName": "sub-contractor-group",
+    "pluralName": "sub-contractor-groups",
+    "displayName": "Sub Contractor Group"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "uid": {
+      "type": "string"
+    },
+    "creator": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    }
+  }
+}

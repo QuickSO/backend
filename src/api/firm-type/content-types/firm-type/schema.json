@@ -1,0 +1,29 @@
+{
+  "kind": "collectionType",
+  "collectionName": "firm_types",
+  "info": {
+    "singularName": "firm-type",
+    "pluralName": "firm-types",
+    "displayName": "Firm Type"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "uid": {
+      "type": "string"
+    },
+    "creator": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    }
+  }
+}

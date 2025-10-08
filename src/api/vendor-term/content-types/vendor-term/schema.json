@@ -1,0 +1,69 @@
+{
+  "kind": "collectionType",
+  "collectionName": "vendor_terms",
+  "info": {
+    "singularName": "vendor-term",
+    "pluralName": "vendor-terms",
+    "displayName": "Vendor Term",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "no": {
+      "type": "string"
+    },
+    "uid": {
+      "type": "string"
+    },
+    "creator": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "vendor": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::vendor.vendor"
+    },
+    "material_item": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::material-item.material-item"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "material_group": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::material-group.material-group"
+    },
+    "material_unit": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::material-unit.material-unit"
+    },
+    "approved_by": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::employee.employee"
+    },
+    "approval_remarks": {
+      "type": "richtext"
+    },
+    "creation_employee": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::employee.employee"
+    },
+    "term_and_condition": {
+      "type": "json"
+    }
+  }
+}

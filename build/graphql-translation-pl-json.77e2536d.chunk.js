@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkquickso_cms=self.webpackChunkquickso_cms||[]).push([[4896],{96435:e=>{e.exports=JSON.parse('{"plugin.description.long":"Dodaje GraphQL endpoint z domy\u015Blnymi metodami API.","plugin.description.short":"Dodaje GraphQL endpoint z domy\u015Blnymi metodami API."}')}}]);

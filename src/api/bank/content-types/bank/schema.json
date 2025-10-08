@@ -1,0 +1,62 @@
+{
+  "kind": "collectionType",
+  "collectionName": "banks",
+  "info": {
+    "singularName": "bank",
+    "pluralName": "banks",
+    "displayName": "Bank",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "uid": {
+      "type": "string"
+    },
+    "creator": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "logo": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "short_name": {
+      "type": "string"
+    },
+    "account_name": {
+      "type": "string"
+    },
+    "account_number": {
+      "type": "decimal"
+    },
+    "branch": {
+      "type": "string"
+    },
+    "ifc_number": {
+      "type": "decimal"
+    },
+    "micr_number": {
+      "type": "decimal"
+    },
+    "swift_code": {
+      "type": "string"
+    }
+  }
+}

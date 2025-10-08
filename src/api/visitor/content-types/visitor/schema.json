@@ -1,0 +1,123 @@
+{
+  "kind": "collectionType",
+  "collectionName": "visitors",
+  "info": {
+    "singularName": "visitor",
+    "pluralName": "visitors",
+    "displayName": "Visitor"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "uid": {
+      "type": "string"
+    },
+    "creator": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "in_time": {
+      "type": "time"
+    },
+    "out_time": {
+      "type": "time"
+    },
+    "oxygen_level": {
+      "type": "decimal"
+    },
+    "temperature": {
+      "type": "decimal"
+    },
+    "meeting_purpose": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::meeting-purpose.meeting-purpose"
+    },
+    "designation": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::designation.designation"
+    },
+    "date": {
+      "type": "date"
+    },
+    "location": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::location.location"
+    },
+    "company": {
+      "type": "string"
+    },
+    "address_line_1": {
+      "type": "string"
+    },
+    "address_line_2": {
+      "type": "string"
+    },
+    "mobile_number_1": {
+      "type": "string"
+    },
+    "mobile_number_2": {
+      "type": "string"
+    },
+    "email_1": {
+      "type": "string"
+    },
+    "email_2": {
+      "type": "string"
+    },
+    "pin_code": {
+      "type": "string"
+    },
+    "std_code": {
+      "type": "string"
+    },
+    "city": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::city.city"
+    },
+    "state": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::state.state"
+    },
+    "meeting_with": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::employee.employee"
+    },
+    "photo": {
+      "allowedTypes": ["images", "files", "videos", "audios"],
+      "type": "media",
+      "multiple": false
+    },
+    "initial": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::initial.initial"
+    },
+    "first_name": {
+      "type": "string"
+    },
+    "middle_name": {
+      "type": "string"
+    },
+    "last_name": {
+      "type": "string"
+    },
+    "no": {
+      "type": "string"
+    },
+    "job_title": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,74 @@
+{
+  "kind": "collectionType",
+  "collectionName": "task_works",
+  "info": {
+    "singularName": "task-work",
+    "pluralName": "task-works",
+    "displayName": "Task Work"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "uid": {
+      "type": "string"
+    },
+    "creator": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "task": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::task.task"
+    },
+    "work_item": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::work-item.work-item"
+    },
+    "amount": {
+      "type": "decimal"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": ["Pending", "Approved", "Rejected", "Requested"],
+      "default": "Pending"
+    },
+    "quantity": {
+      "type": "decimal"
+    },
+    "work_group": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::work-group.work-group"
+    },
+    "work_unit": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::work-unit.work-unit"
+    },
+    "is_deleted": {
+      "type": "boolean",
+      "default": false
+    },
+    "approved_by": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::employee.employee"
+    },
+    "approved_at": {
+      "type": "datetime"
+    },
+    "employee": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::employee.employee"
+    }
+  }
+}

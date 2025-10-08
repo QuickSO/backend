@@ -1,0 +1,54 @@
+{
+  "kind": "collectionType",
+  "collectionName": "manpower_logs",
+  "info": {
+    "singularName": "manpower-log",
+    "pluralName": "manpower-logs",
+    "displayName": "Manpower Log",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "uid": {
+      "type": "string"
+    },
+    "creator": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "manpower": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::manpower.manpower"
+    },
+    "details": {
+      "type": "richtext"
+    },
+    "date": {
+      "type": "date"
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "Pending",
+        "Verified"
+      ],
+      "default": "Pending"
+    },
+    "verified_by": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::employee.employee"
+    },
+    "verified_at": {
+      "type": "datetime"
+    },
+    "verified_notes": {
+      "type": "richtext"
+    }
+  }
+}

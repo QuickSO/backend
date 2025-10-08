@@ -1,0 +1,29 @@
+{
+  "kind": "collectionType",
+  "collectionName": "agency_groups",
+  "info": {
+    "singularName": "agency-group",
+    "pluralName": "agency-groups",
+    "displayName": "Agency Group"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "uid": {
+      "type": "string"
+    },
+    "creator": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    }
+  }
+}

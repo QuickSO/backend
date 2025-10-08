@@ -1,0 +1,78 @@
+{
+  "kind": "collectionType",
+  "collectionName": "machines",
+  "info": {
+    "singularName": "machine",
+    "pluralName": "machines",
+    "displayName": "Machine",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "no": {
+      "type": "string"
+    },
+    "uid": {
+      "type": "string"
+    },
+    "creator": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "tool_type": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::tool-type.tool-type"
+    },
+    "model": {
+      "type": "string"
+    },
+    "condition": {
+      "type": "string"
+    },
+    "employee": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::employee.employee"
+    },
+    "initial_value": {
+      "type": "decimal"
+    },
+    "loan_balance": {
+      "type": "decimal"
+    },
+    "is_loan": {
+      "type": "boolean",
+      "default": false
+    },
+    "is_consumable": {
+      "type": "boolean",
+      "default": false
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "manufacturer": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::manufacturer.manufacturer"
+    },
+    "location": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::location.location"
+    },
+    "project": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::project.project"
+    }
+  }
+}

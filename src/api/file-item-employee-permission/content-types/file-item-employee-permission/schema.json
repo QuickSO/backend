@@ -1,0 +1,40 @@
+{
+  "kind": "collectionType",
+  "collectionName": "file_item_employee_permissions",
+  "info": {
+    "singularName": "file-item-employee-permission",
+    "pluralName": "file-item-employee-permissions",
+    "displayName": "File Item Employee Permission"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "uid": {
+      "type": "string"
+    },
+    "file_item": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::file-item.file-item"
+    },
+    "employee": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::employee.employee"
+    },
+    "file_role": {
+      "type": "enumeration",
+      "enum": [
+        "Viewer",
+        "Editor"
+      ],
+      "default": "Viewer"
+    },
+    "is_deleted": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

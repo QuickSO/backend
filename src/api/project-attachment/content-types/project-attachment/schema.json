@@ -1,0 +1,55 @@
+{
+  "kind": "collectionType",
+  "collectionName": "project_attachments",
+  "info": {
+    "singularName": "project-attachment",
+    "pluralName": "project-attachments",
+    "displayName": "Project Attachment"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "attachment": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
+    },
+    "file_type": {
+      "type": "string"
+    },
+    "file_size": {
+      "type": "biginteger"
+    },
+    "creator": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "owner": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "project": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::project.project"
+    },
+    "uid": {
+      "type": "string"
+    }
+  }
+}

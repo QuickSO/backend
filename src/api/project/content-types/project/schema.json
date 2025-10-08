@@ -1,0 +1,174 @@
+{
+  "kind": "collectionType",
+  "collectionName": "projects",
+  "info": {
+    "singularName": "project",
+    "pluralName": "projects",
+    "displayName": "Project",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "uid": {
+      "type": "string",
+      "required": true,
+      "unique": false
+    },
+    "creator": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "project_type": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::project-type.project-type"
+    },
+    "members": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::employee.employee"
+    },
+    "project_managers": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::employee.employee"
+    },
+    "vendors": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::vendor.vendor"
+    },
+    "partners": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::partner.partner"
+    },
+    "code": {
+      "type": "string"
+    },
+    "address_line_1": {
+      "type": "string"
+    },
+    "address_line_2": {
+      "type": "string"
+    },
+    "city": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::city.city"
+    },
+    "state": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::state.state"
+    },
+    "pin_code": {
+      "type": "string"
+    },
+    "rera_no": {
+      "type": "string"
+    },
+    "longitude": {
+      "type": "string"
+    },
+    "latitude": {
+      "type": "string"
+    },
+    "start_date": {
+      "type": "date"
+    },
+    "company": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::company.company"
+    },
+    "sanctioned_budget": {
+      "type": "decimal",
+      "default": 0
+    },
+    "estimated_budget": {
+      "type": "decimal",
+      "default": 0
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "Pending",
+        "Active",
+        "On Hold",
+        "Completed"
+      ],
+      "default": "Pending"
+    },
+    "sub_contractors": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::sub-contractor.sub-contractor"
+    },
+    "agencies": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::agency.agency"
+    },
+    "end_date": {
+      "type": "date"
+    },
+    "location": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::location.location"
+    },
+    "no": {
+      "type": "string"
+    },
+    "is_deleted": {
+      "type": "boolean",
+      "default": false
+    },
+    "actual_start_date": {
+      "type": "date"
+    },
+    "actual_end_date": {
+      "type": "date"
+    },
+    "can_update_project": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::app-user.app-user"
+    },
+    "can_view_project": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::app-user.app-user"
+    },
+    "can_update_gantt_chart": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::app-user.app-user"
+    },
+    "can_view_gantt_chart": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::app-user.app-user"
+    },
+    "construction_area": {
+      "type": "biginteger"
+    },
+    "tasks": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::task.task",
+      "mappedBy": "project"
+    }
+  }
+}

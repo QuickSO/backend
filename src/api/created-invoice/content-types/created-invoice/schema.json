@@ -1,0 +1,146 @@
+{
+  "kind": "collectionType",
+  "collectionName": "created_invoices",
+  "info": {
+    "singularName": "created-invoice",
+    "pluralName": "created-invoices",
+    "displayName": "Created Invoice",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "no": {
+      "type": "string"
+    },
+    "uid": {
+      "type": "string"
+    },
+    "creator": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "invoice_from": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::company.company"
+    },
+    "invoice_from_address": {
+      "type": "text"
+    },
+    "invoice_from_gstin_number": {
+      "type": "string"
+    },
+    "invoice_from_email": {
+      "type": "email"
+    },
+    "contact_person": {
+      "type": "string"
+    },
+    "contact_person_number": {
+      "type": "string"
+    },
+    "invoice_to_address": {
+      "type": "text"
+    },
+    "invoice_to_gstin_number": {
+      "type": "string"
+    },
+    "invoice_to_email": {
+      "type": "email"
+    },
+    "place_of_supply": {
+      "type": "string"
+    },
+    "shipped_to": {
+      "type": "json"
+    },
+    "invoice_number": {
+      "type": "string"
+    },
+    "invoice_date": {
+      "type": "date"
+    },
+    "po_number": {
+      "type": "integer"
+    },
+    "po_date": {
+      "type": "date"
+    },
+    "oc_number": {
+      "type": "integer"
+    },
+    "oc_date": {
+      "type": "date"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "attachment": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "approved_by": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::employee.employee"
+    },
+    "employee": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::employee.employee"
+    },
+    "creation_employee": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::employee.employee"
+    },
+    "vendor": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::vendor.vendor"
+    },
+    "bank": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::bank.bank"
+    },
+    "invoices": {
+      "type": "json"
+    },
+    "invoice_type": {
+      "type": "enumeration",
+      "enum": [
+        "Performa Invoice",
+        "Tax Invoice"
+      ]
+    },
+    "payment_date": {
+      "type": "date"
+    },
+    "invoice_to": {
+      "type": "json"
+    },
+    "payment_schedule": {
+      "type": "json"
+    },
+    "payment_term": {
+      "type": "json"
+    },
+    "quotation": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::quotation.quotation"
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "kind": "collectionType",
+  "collectionName": "job_titles",
+  "info": {
+    "singularName": "job-title",
+    "pluralName": "job-titles",
+    "displayName": "Job Title"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "creator": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "uid": {
+      "type": "string"
+    }
+  }
+}

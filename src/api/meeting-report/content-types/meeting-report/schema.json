@@ -1,0 +1,54 @@
+{
+  "kind": "collectionType",
+  "collectionName": "meeting_reports",
+  "info": {
+    "singularName": "meeting-report",
+    "pluralName": "meeting-reports",
+    "displayName": "Meeting Report",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "content": {
+      "type": "richtext"
+    },
+    "attachments": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "creator": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "meeting": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::meeting.meeting"
+    },
+    "taking_minutes_people": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "plugin::users-permissions.user"
+    },
+    "code": {
+      "type": "string"
+    },
+    "uid": {
+      "type": "string"
+    }
+  }
+}

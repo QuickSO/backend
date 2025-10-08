@@ -1,0 +1,139 @@
+{
+  "kind": "collectionType",
+  "collectionName": "companies",
+  "info": {
+    "singularName": "company",
+    "pluralName": "companies",
+    "displayName": "Company"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "uid": {
+      "type": "string"
+    },
+    "creator": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "address_line_1": {
+      "type": "string"
+    },
+    "address_line_2": {
+      "type": "string"
+    },
+    "phone_number_1": {
+      "type": "string"
+    },
+    "phone_number_2": {
+      "type": "string"
+    },
+    "mobile_number_1": {
+      "type": "string"
+    },
+    "mobile_number_2": {
+      "type": "string"
+    },
+    "pin_code": {
+      "type": "string"
+    },
+    "std_code": {
+      "type": "string"
+    },
+    "contact_person": {
+      "type": "string"
+    },
+    "registration_no": {
+      "type": "string"
+    },
+    "gsin_no": {
+      "type": "string"
+    },
+    "pan_no": {
+      "type": "string"
+    },
+    "website": {
+      "type": "string"
+    },
+    "email_1": {
+      "type": "string"
+    },
+    "email_2": {
+      "type": "string"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "gsin_document": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "registration_document": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "pan_document": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "name": {
+      "type": "string"
+    },
+    "firm_type": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::firm-type.firm-type"
+    },
+    "logo": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "header": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "state": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::state.state"
+    },
+    "city": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::city.city"
+    }
+  }
+}

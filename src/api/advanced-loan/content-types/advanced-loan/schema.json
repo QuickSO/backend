@@ -1,0 +1,52 @@
+{
+  "kind": "collectionType",
+  "collectionName": "advanced_loans",
+  "info": {
+    "singularName": "advanced-loan",
+    "pluralName": "advanced-loans",
+    "displayName": "Advanced Loan",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "employee": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::employee.employee"
+    },
+    "uid": {
+      "type": "string"
+    },
+    "creator": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "start_date": {
+      "type": "date"
+    },
+    "months": {
+      "type": "integer"
+    },
+    "reason": {
+      "type": "richtext"
+    },
+    "attachment": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "amount": {
+      "type": "decimal"
+    }
+  }
+}

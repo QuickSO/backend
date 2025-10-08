@@ -1,0 +1,62 @@
+{
+  "kind": "collectionType",
+  "collectionName": "task_logs",
+  "info": {
+    "singularName": "task-log",
+    "pluralName": "task-logs",
+    "displayName": "Task Log",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "uid": {
+      "type": "string"
+    },
+    "creator": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "task": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::task.task"
+    },
+    "progress": {
+      "type": "decimal"
+    },
+    "employee": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::employee.employee"
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "Pending",
+        "Verified"
+      ],
+      "default": "Pending"
+    },
+    "date": {
+      "type": "date"
+    },
+    "details": {
+      "type": "richtext"
+    },
+    "verified_by": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::employee.employee"
+    },
+    "verified_at": {
+      "type": "datetime"
+    },
+    "verified_notes": {
+      "type": "richtext"
+    }
+  }
+}

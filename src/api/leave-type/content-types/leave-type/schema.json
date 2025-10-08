@@ -1,0 +1,38 @@
+{
+  "kind": "collectionType",
+  "collectionName": "leave_types",
+  "info": {
+    "singularName": "leave-type",
+    "pluralName": "leave-types",
+    "displayName": "Leave Type",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "uid": {
+      "type": "string"
+    },
+    "creator": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "is_paid": {
+      "type": "boolean",
+      "default": false
+    },
+    "paid_amount": {
+      "type": "decimal",
+      "default": 0
+    }
+  }
+}

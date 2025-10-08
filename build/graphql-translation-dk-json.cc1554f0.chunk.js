@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkquickso_cms=self.webpackChunkquickso_cms||[]).push([[2841],{80538:e=>{e.exports=JSON.parse('{"plugin.description.long":"Tilf\xF8jer GraphQL endpoint med standard API metoder.","plugin.description.short":"Tilf\xF8jer GraphQL endpoint med standard API metoder."}')}}]);

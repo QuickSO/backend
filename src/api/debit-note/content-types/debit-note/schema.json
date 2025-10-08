@@ -1,0 +1,92 @@
+{
+  "kind": "collectionType",
+  "collectionName": "debit_notes",
+  "info": {
+    "singularName": "debit-note",
+    "pluralName": "debit-notes",
+    "displayName": "Debit Note",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "no": {
+      "type": "string"
+    },
+    "uid": {
+      "type": "string"
+    },
+    "creator": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "attachment": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images", "files", "videos", "audios"]
+    },
+    "employee": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::employee.employee"
+    },
+    "remarks": {
+      "type": "richtext"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "grand_total": {
+      "type": "decimal"
+    },
+    "project": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::project.project"
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": ["Pending", "Approved"],
+      "default": "Pending"
+    },
+    "approved_by": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::employee.employee"
+    },
+    "provider_uid": {
+      "type": "string"
+    },
+    "provider_type": {
+      "type": "enumeration",
+      "enum": ["Vendor", "Sub-contractor", "Agency"]
+    },
+    "approved_at": {
+      "type": "datetime"
+    },
+    "agency": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::agency.agency"
+    },
+    "vendor": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::vendor.vendor"
+    },
+    "sub_contractor": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::sub-contractor.sub-contractor"
+    },
+    "creation_employee": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::employee.employee"
+    }
+  }
+}

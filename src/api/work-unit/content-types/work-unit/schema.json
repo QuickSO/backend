@@ -1,0 +1,29 @@
+{
+  "kind": "collectionType",
+  "collectionName": "work_units",
+  "info": {
+    "singularName": "work-unit",
+    "pluralName": "work-units",
+    "displayName": "Work Unit"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "uid": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "creator": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    }
+  }
+}

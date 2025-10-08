@@ -1,0 +1,76 @@
+{
+  "kind": "collectionType",
+  "collectionName": "new_forms",
+  "info": {
+    "singularName": "new-form",
+    "pluralName": "new-forms",
+    "displayName": "New Form",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "task_code": {
+      "type": "string",
+      "required": true
+    },
+    "contract_short_name": {
+      "type": "text",
+      "required": true
+    },
+    "structure_type_fk": {
+      "type": "text",
+      "required": true
+    },
+    "structure": {
+      "type": "string",
+      "required": true
+    },
+    "component": {
+      "type": "string",
+      "required": true
+    },
+    "component_id": {
+      "type": "string",
+      "required": true
+    },
+    "activity_name": {
+      "type": "text",
+      "required": true
+    },
+    "weightages": {
+      "type": "float",
+      "required": true
+    },
+    "unit": {
+      "type": "enumeration",
+      "enum": [
+        "CUM",
+        "SQM",
+        "NOS"
+      ]
+    },
+    "scope": {
+      "type": "integer",
+      "required": true,
+      "max": 100,
+      "min": 0
+    },
+    "bl_project_start": {
+      "type": "date",
+      "required": true
+    },
+    "bl_project_finish": {
+      "type": "date",
+      "required": true
+    },
+    "completed": {
+      "type": "integer",
+      "required": true,
+      "max": 100,
+      "min": 0
+    }
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "kind": "collectionType",
+  "collectionName": "meeting_notes",
+  "info": {
+    "singularName": "meeting-note",
+    "pluralName": "meeting-notes",
+    "displayName": "Meeting Note",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "start_time": {
+      "type": "datetime"
+    },
+    "end_time": {
+      "type": "datetime"
+    },
+    "uid": {
+      "type": "string"
+    },
+    "creator": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "meeting": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::meeting.meeting"
+    },
+    "content": {
+      "type": "richtext"
+    },
+    "photograph_file": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images", "files", "videos", "audios"]
+    },
+    "recording_file": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images", "files", "videos", "audios"]
+    },
+    "employee": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::employee.employee"
+    }
+  }
+}

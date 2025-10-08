@@ -1,0 +1,59 @@
+{
+  "kind": "collectionType",
+  "collectionName": "tickets",
+  "info": {
+    "singularName": "ticket",
+    "pluralName": "tickets",
+    "displayName": "Ticket",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "message": {
+      "type": "richtext"
+    },
+    "uid": {
+      "type": "string"
+    },
+    "creator": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "attachment": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images", "files", "videos", "audios"]
+    },
+    "subject": {
+      "type": "string"
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": ["Closed", "Opened"],
+      "default": "Pending"
+    },
+    "priority": {
+      "type": "enumeration",
+      "enum": ["High", "Medium", "Low"]
+    },
+    "sender": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::employee.employee"
+    },
+    "recipients": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::employee.employee"
+    },
+    "is_deleted": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "kind": "collectionType",
+  "collectionName": "task_comments",
+  "info": {
+    "singularName": "task-comment",
+    "pluralName": "task-comments",
+    "displayName": "Task Comment",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "uid": {
+      "type": "string"
+    },
+    "creator": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "task": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::task.task"
+    },
+    "employee": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::employee.employee"
+    },
+    "comment": {
+      "type": "text"
+    }
+  }
+}

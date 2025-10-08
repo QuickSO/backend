@@ -1,0 +1,71 @@
+{
+  "kind": "collectionType",
+  "collectionName": "vendor_payment_schedules",
+  "info": {
+    "singularName": "vendor-payment-schedule",
+    "pluralName": "vendor-payment-schedules",
+    "displayName": "Vendor Payment Schedule",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "uid": {
+      "type": "string"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "creator": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "material_item": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::material-item.material-item"
+    },
+    "no": {
+      "type": "string"
+    },
+    "material_group": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::material-group.material-group"
+    },
+    "material_unit": {  
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::material-unit.material-unit"
+    },
+    "vendor": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::vendor.vendor"
+    },
+    "approved_by": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::employee.employee"
+    },
+    "approval_remarks": {
+      "type": "richtext"
+    },
+    "creation_employee": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::employee.employee"
+    },
+    "payment_schedule": {
+      "type": "json"
+    },
+    "project": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::project.project"
+    }
+  }
+}

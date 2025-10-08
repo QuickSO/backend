@@ -1,0 +1,73 @@
+{
+  "kind": "collectionType",
+  "collectionName": "locations",
+  "info": {
+    "singularName": "location",
+    "pluralName": "locations",
+    "displayName": "Location",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "uid": {
+      "type": "string"
+    },
+    "creator": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "office": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::office.office"
+    },
+    "construction_site": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::construction-site.construction-site"
+    },
+    "location_type": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::location-type.location-type"
+    },
+    "name": {
+      "type": "string"
+    },
+    "address_line_1": {
+      "type": "string"
+    },
+    "address_line_2": {
+      "type": "string"
+    },
+    "state": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::state.state"
+    },
+    "city": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::city.city"
+    },
+    "latitude": {
+      "type": "float"
+    },
+    "longitude": {
+      "type": "float"
+    },
+    "pin_code": {
+      "type": "string"
+    },
+    "coordinates": {
+      "type": "json"
+    },
+    "radius": {
+      "type": "decimal"
+    }
+  }
+}

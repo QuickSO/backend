@@ -1,0 +1,44 @@
+{
+  "kind": "collectionType",
+  "collectionName": "task_machines",
+  "info": {
+    "singularName": "task-machine",
+    "pluralName": "task-machines",
+    "displayName": "Task Machine",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "task": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::task.task"
+    },
+    "machine": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::machine.machine"
+    },
+    "uid": {
+      "type": "string"
+    },
+    "quantity": {
+      "type": "decimal"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "creator": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "is_deleted": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

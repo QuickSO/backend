@@ -1,0 +1,46 @@
+{
+  "kind": "collectionType",
+  "collectionName": "to_dos",
+  "info": {
+    "singularName": "to-do",
+    "pluralName": "to-dos",
+    "displayName": "To Do",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": ["To Do", "In Progress", "Done"]
+    },
+    "uid": {
+      "type": "string"
+    },
+    "creator": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "employee": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::employee.employee"
+    },
+    "time": {
+      "type": "datetime"
+    },
+    "is_deleted": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

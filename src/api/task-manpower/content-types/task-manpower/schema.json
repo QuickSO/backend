@@ -1,0 +1,54 @@
+{
+  "kind": "collectionType",
+  "collectionName": "task_manpowers",
+  "info": {
+    "singularName": "task-manpower",
+    "pluralName": "task-manpowers",
+    "displayName": "Task Manpower",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "uid": {
+      "type": "string"
+    },
+    "task": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::task.task"
+    },
+    "creator": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "manpower_type": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::manpower-type.manpower-type"
+    },
+    "labour": {
+      "type": "string"
+    },
+    "is_deleted": {
+      "type": "boolean",
+      "default": false
+    },
+    "attachment": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

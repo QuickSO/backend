@@ -1,0 +1,80 @@
+{
+  "kind": "collectionType",
+  "collectionName": "leave_applications",
+  "info": {
+    "singularName": "leave-application",
+    "pluralName": "leave-applications",
+    "displayName": "Leave Application",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "employee": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::employee.employee"
+    },
+    "leave_type": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::leave-type.leave-type"
+    },
+    "creator": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "from_date": {
+      "type": "date"
+    },
+    "to_date": {
+      "type": "date"
+    },
+    "attachment": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images", "files", "videos", "audios"]
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": ["Rejected", "Approved", "Pending"],
+      "default": "Pending"
+    },
+    "approved_at": {
+      "type": "biginteger"
+    },
+    "rejected_at": {
+      "type": "biginteger"
+    },
+    "approved_by": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::employee.employee"
+    },
+    "rejected_by": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::employee.employee"
+    },
+    "reason": {
+      "type": "richtext"
+    },
+    "uid": {
+      "type": "string"
+    },
+    "representative": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::employee.employee"
+    },
+    "creation_employee": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::employee.employee"
+    }
+  }
+}

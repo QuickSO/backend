@@ -1,0 +1,43 @@
+{
+  "kind": "collectionType",
+  "collectionName": "task_hand_tools",
+  "info": {
+    "singularName": "task-hand-tool",
+    "pluralName": "task-hand-tools",
+    "displayName": "Task Hand Tool"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "uid": {
+      "type": "string"
+    },
+    "task": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::task.task"
+    },
+    "hand_tool": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::hand-tool.hand-tool"
+    },
+    "creator": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "quantity": {
+      "type": "decimal"
+    },
+    "is_deleted": {
+      "type": "boolean",
+      "default": false
+    },
+    "description": {
+      "type": "richtext"
+    }
+  }
+}

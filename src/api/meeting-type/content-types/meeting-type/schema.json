@@ -1,0 +1,29 @@
+{
+  "kind": "collectionType",
+  "collectionName": "meeting_types",
+  "info": {
+    "singularName": "meeting-type",
+    "pluralName": "meeting-types",
+    "displayName": "Meeting Type"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "uid": {
+      "type": "string"
+    },
+    "creator": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    }
+  }
+}

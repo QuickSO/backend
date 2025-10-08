@@ -1,0 +1,59 @@
+{
+  "kind": "collectionType",
+  "collectionName": "attendances",
+  "info": {
+    "singularName": "attendance",
+    "pluralName": "attendances",
+    "displayName": "Attendance",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "creator": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "employee": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::employee.employee"
+    },
+    "date": {
+      "type": "date"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "uid": {
+      "type": "string"
+    },
+    "location": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::location.location"
+    },
+    "shift": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::shift.shift"
+    },
+    "in_time": {
+      "type": "time"
+    },
+    "out_time": {
+      "type": "time"
+    },
+    "attendance_type": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::attendance-type.attendance-type"
+    },
+    "attendance_by": {
+      "type": "string"
+    }
+  }
+}

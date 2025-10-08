@@ -1,0 +1,66 @@
+{
+  "kind": "collectionType",
+  "collectionName": "employee_salaries",
+  "info": {
+    "singularName": "employee-salary",
+    "pluralName": "employee-salaries",
+    "displayName": "Employee Salary",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "employee": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::employee.employee"
+    },
+    "amount": {
+      "type": "decimal"
+    },
+    "uid": {
+      "type": "string"
+    },
+    "creator": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "notes": {
+      "type": "richtext"
+    },
+    "payment_mode": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::payment-mode.payment-mode"
+    },
+    "bank": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::bank.bank"
+    },
+    "basic_salary": {
+      "type": "decimal"
+    },
+    "hra": {
+      "type": "decimal"
+    },
+    "bonus": {
+      "type": "decimal"
+    },
+    "conveyance": {
+      "type": "decimal"
+    },
+    "reimbursement": {
+      "type": "decimal"
+    },
+    "other_allowance": {
+      "type": "decimal"
+    },
+    "total_earnings": {
+      "type": "decimal"
+    }
+  }
+}

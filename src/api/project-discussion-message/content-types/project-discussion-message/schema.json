@@ -1,0 +1,48 @@
+{
+  "kind": "collectionType",
+  "collectionName": "project_discussion_messages",
+  "info": {
+    "singularName": "project-discussion-message",
+    "pluralName": "project-discussion-messages",
+    "displayName": "Project Discussion Message",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "message": {
+      "type": "string"
+    },
+    "attachments": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "user": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "parent": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::project-discussion-message.project-discussion-message"
+    },
+    "uid": {
+      "type": "string"
+    },
+    "project_discussion": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::project-discussion.project-discussion"
+    }
+  }
+}

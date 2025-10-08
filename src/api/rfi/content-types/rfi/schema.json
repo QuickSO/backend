@@ -1,0 +1,84 @@
+{
+  "kind": "collectionType",
+  "collectionName": "rfis",
+  "info": {
+    "singularName": "rfi",
+    "pluralName": "rfis",
+    "displayName": "RFI",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "project": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::project.project"
+    },
+    "assigned_to": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::employee.employee"
+    },
+    "verified_by": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::employee.employee"
+    },
+    "drawing_rfi": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "submission_date": {
+      "type": "date"
+    },
+    "inspection_date": {
+      "type": "date"
+    },
+    "chainage_from": {
+      "type": "decimal"
+    },
+    "chainage_to": {
+      "type": "decimal"
+    },
+    "inspection_time": {
+      "type": "time"
+    },
+    "length": {
+      "type": "decimal"
+    },
+    "remarks": {
+      "type": "richtext"
+    },
+    "side": {
+      "type": "string"
+    },
+    "rfi_number": {
+      "type": "string"
+    },
+    "uid": {
+      "type": "uid"
+    },
+    "type": {
+      "type": "string"
+    },
+    "work_desc": {
+      "type": "text"
+    },
+    "company_name": {
+      "type": "string"
+    },
+    "structure_id": {
+      "type": "string"
+    }
+  }
+}

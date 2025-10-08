@@ -1,0 +1,175 @@
+{
+  "kind": "collectionType",
+  "collectionName": "sub_contractor_requirement_forms",
+  "info": {
+    "singularName": "sub-contractor-requirement-form",
+    "pluralName": "sub-contractor-requirement-forms",
+    "displayName": "Sub Contractor Requirement Form",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "uid": {
+      "type": "string"
+    },
+    "sub_contractor": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::sub-contractor.sub-contractor"
+    },
+    "creator": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "project": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::project.project"
+    },
+    "scheduled_date": {
+      "type": "date"
+    },
+    "completion_date": {
+      "type": "date"
+    },
+    "remarks": {
+      "type": "richtext"
+    },
+    "requirements": {
+      "type": "richtext"
+    },
+    "checklist": {
+      "type": "richtext"
+    },
+    "work_forces": {
+      "type": "richtext"
+    },
+    "work_schedules": {
+      "type": "richtext"
+    },
+    "duration": {
+      "type": "string"
+    },
+    "work_group": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::work-group.work-group"
+    },
+    "working_address": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::location.location"
+    },
+    "budget": {
+      "type": "decimal"
+    },
+    "estimated_amount": {
+      "type": "decimal"
+    },
+    "term": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::sub-contractor-term.sub-contractor-term"
+    },
+    "urgency_level": {
+      "type": "enumeration",
+      "enum": [
+        "Low",
+        "Medium",
+        "High"
+      ]
+    },
+    "license_type": {
+      "type": "enumeration",
+      "enum": [
+        "Specific",
+        "General"
+      ]
+    },
+    "approved_by": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::employee.employee"
+    },
+    "approval_remarks": {
+      "type": "richtext"
+    },
+    "creation_employee": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::employee.employee"
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "Pending",
+        "Approved"
+      ],
+      "default": "Pending"
+    },
+    "no": {
+      "type": "string"
+    },
+    "delivery_address": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::location.location"
+    },
+    "sub_contractor_term": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::sub-contractor-term.sub-contractor-term"
+    },
+    "terms": {
+      "type": "json"
+    },
+    "work_items": {
+      "type": "json"
+    },
+    "payment_schedules": {
+      "type": "json"
+    },
+    "sub_contractors": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::sub-contractor.sub-contractor"
+    },
+    "work_items_remarks": {
+      "type": "richtext"
+    },
+    "payment_schedules_remarks": {
+      "type": "richtext"
+    },
+    "terms_remarks": {
+      "type": "richtext"
+    },
+    "delivery_date": {
+      "type": "date"
+    },
+    "expected_delivery_date": {
+      "type": "date"
+    },
+    "is_deleted": {
+      "type": "boolean",
+      "default": false
+    },
+    "sub_contractor_boq": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::sub-contractor-boq.sub-contractor-boq"
+    }
+  },
+  "retention_amount": {
+      "type": "decimal"
+    },
+    "retention_percentage": {
+      "type": "decimal"
+    }
+}

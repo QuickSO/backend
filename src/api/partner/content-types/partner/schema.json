@@ -1,0 +1,173 @@
+{
+  "kind": "collectionType",
+  "collectionName": "partners",
+  "info": {
+    "singularName": "partner",
+    "pluralName": "partners",
+    "displayName": "Partner",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "firm_type": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::firm-type.firm-type"
+    },
+    "logo": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "header": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "name": {
+      "type": "string"
+    },
+    "contact_person": {
+      "type": "string"
+    },
+    "address_line_1": {
+      "type": "string"
+    },
+    "address_line_2": {
+      "type": "string"
+    },
+    "state": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::state.state"
+    },
+    "city": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::city.city"
+    },
+    "pin_code": {
+      "type": "string"
+    },
+    "std_code": {
+      "type": "string"
+    },
+    "phone_number_1": {
+      "type": "string"
+    },
+    "phone_number_2": {
+      "type": "string"
+    },
+    "mobile_number_1": {
+      "type": "string"
+    },
+    "mobile_number_2": {
+      "type": "string"
+    },
+    "email_1": {
+      "type": "string"
+    },
+    "email_2": {
+      "type": "string"
+    },
+    "website": {
+      "type": "string"
+    },
+    "registration_no": {
+      "type": "string"
+    },
+    "registration_document": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "pan_no": {
+      "type": "string"
+    },
+    "pan_document": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "gsin_no": {
+      "type": "string"
+    },
+    "gsin_document": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "uid": {
+      "type": "string"
+    },
+    "creator": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "projects": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::project.project"
+    },
+    "is_deleted": {
+      "type": "boolean",
+      "default": false
+    },
+    "initial": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::initial.initial"
+    },
+    "company": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::company.company"
+    },
+    "first_name": {
+      "type": "string"
+    },
+    "middle_name": {
+      "type": "string"
+    },
+    "last_name": {
+      "type": "string"
+    }
+  }
+}

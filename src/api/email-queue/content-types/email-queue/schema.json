@@ -1,0 +1,34 @@
+{
+  "kind": "collectionType",
+  "collectionName": "email_queues",
+  "info": {
+    "singularName": "email-queue",
+    "pluralName": "email-queues",
+    "displayName": "Email Queue"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "template": {
+      "type": "string"
+    },
+    "data": {
+      "type": "json"
+    },
+    "recipients": {
+      "type": "json"
+    },
+    "processed": {
+      "type": "boolean",
+      "default": false
+    },
+    "cc_recipients": {
+      "type": "json"
+    },
+    "bcc_recipients": {
+      "type": "json"
+    }
+  }
+}

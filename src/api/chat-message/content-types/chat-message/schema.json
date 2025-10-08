@@ -1,0 +1,60 @@
+{
+  "kind": "collectionType",
+  "collectionName": "chat_messages",
+  "info": {
+    "singularName": "chat-message",
+    "pluralName": "chat-messages",
+    "displayName": "Chat Message",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "sender": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::employee.employee"
+    },
+    "content": {
+      "type": "text"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": ["text", "attachment"],
+      "default": "text"
+    },
+    "module": {
+      "type": "enumeration",
+      "enum": ["quick-teams"]
+    },
+    "sent_at": {
+      "type": "datetime"
+    },
+    "seen_by": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::employee.employee"
+    },
+    "conversation": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::conversation.conversation"
+    },
+    "attachment": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images", "files", "videos", "audios"]
+    },
+    "is_read": {
+      "type": "boolean",
+      "default": false
+    },
+    "is_deleted": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

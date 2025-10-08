@@ -1,0 +1,39 @@
+{
+  "kind": "collectionType",
+  "collectionName": "salaries",
+  "info": {
+    "singularName": "salary",
+    "pluralName": "salaries",
+    "displayName": "Salary"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "notes": {
+      "type": "richtext"
+    },
+    "employee": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::employee.employee"
+    },
+    "uid": {
+      "type": "string"
+    },
+    "creator": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "amount": {
+      "type": "biginteger"
+    },
+    "job_title": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::job-title.job-title"
+    }
+  }
+}

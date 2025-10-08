@@ -1,0 +1,38 @@
+{
+  "kind": "collectionType",
+  "collectionName": "gst_types",
+  "info": {
+    "singularName": "gst-type",
+    "pluralName": "gst-types",
+    "displayName": "GST Type",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "uid": {
+      "type": "string"
+    },
+    "creator": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "rate": {
+      "type": "decimal"
+    },
+    "parent": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::gst-type.gst-type"
+    }
+  }
+}

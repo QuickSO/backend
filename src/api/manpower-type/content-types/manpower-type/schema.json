@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "manpower_types",
+  "info": {
+    "singularName": "manpower-type",
+    "pluralName": "manpower-types",
+    "displayName": "Manpower Type",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "uid": {
+      "type": "string"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "creator": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "cost_per_day": {
+      "type": "biginteger"
+    }
+  }
+}

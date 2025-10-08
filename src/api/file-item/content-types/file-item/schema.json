@@ -1,0 +1,57 @@
+{
+  "kind": "collectionType",
+  "collectionName": "file_items",
+  "info": {
+    "singularName": "file-item",
+    "pluralName": "file-items",
+    "displayName": "File Item",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "item_type": {
+      "type": "enumeration",
+      "enum": ["File", "Folder"]
+    },
+    "uid": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "attachment": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images", "files", "videos", "audios"]
+    },
+    "is_deleted": {
+      "type": "boolean",
+      "default": false
+    },
+    "file_type": {
+      "type": "string"
+    },
+    "parent": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::file-item.file-item"
+    },
+    "module": {
+      "type": "enumeration",
+      "enum": [
+        "Quick Projects",
+        "Quick Teams",
+        "Quick Stocks",
+        "Quick Drive",
+        "Quick Talks"
+      ]
+    }
+  }
+}

@@ -1,0 +1,147 @@
+{
+  "kind": "collectionType",
+  "collectionName": "agency_work_orders",
+  "info": {
+    "singularName": "agency-work-order",
+    "pluralName": "agency-work-orders",
+    "displayName": "Agency Work Order"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "uid": {
+      "type": "string"
+    },
+    "creator": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "agency": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::agency.agency"
+    },
+    "project": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::project.project"
+    },
+    "scheduled_date": {
+      "type": "date"
+    },
+    "working_address": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::location.location"
+    },
+    "work_group": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::work-group.work-group"
+    },
+    "quotation": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::agency-quotation.agency-quotation"
+    },
+    "requirement_form": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::agency-requirement-form.agency-requirement-form"
+    },
+    "budget": {
+      "type": "decimal"
+    },
+    "estimated_amount": {
+      "type": "decimal"
+    },
+    "total_amount": {
+      "type": "decimal"
+    },
+    "total_tax": {
+      "type": "decimal"
+    },
+    "transportation": {
+      "type": "decimal"
+    },
+    "transportation_tax": {
+      "type": "decimal"
+    },
+    "net_amount": {
+      "type": "decimal"
+    },
+    "discount": {
+      "type": "decimal"
+    },
+    "grand_total": {
+      "type": "decimal"
+    },
+    "credit_period": {
+      "type": "decimal"
+    },
+    "term": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::agency-term.agency-term"
+    },
+    "payment_schedule": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::agency-payment-schedule.agency-payment-schedule"
+    },
+    "remarks": {
+      "type": "richtext"
+    },
+    "urgency_level": {
+      "type": "enumeration",
+      "enum": ["Low", "Medium", "High"]
+    },
+    "approved_by": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::employee.employee"
+    },
+    "approval_remarks": {
+      "type": "richtext"
+    },
+    "creation_employee": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::employee.employee"
+    },
+    "agency_requirement_form": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::agency-requirement-form.agency-requirement-form"
+    },
+    "agency_quotation": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::agency-quotation.agency-quotation"
+    },
+    "delivery_address": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::location.location"
+    },
+    "agency_term": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::agency-term.agency-term"
+    },
+    "agency_payment_schedule": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::agency-payment-schedule.agency-payment-schedule"
+    },
+    "notes": {
+      "type": "richtext"
+    }
+  }
+}

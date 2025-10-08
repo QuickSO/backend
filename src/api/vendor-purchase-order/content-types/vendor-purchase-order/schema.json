@@ -1,0 +1,120 @@
+{
+  "kind": "collectionType",
+  "collectionName": "vendor_purchase_orders",
+  "info": {
+    "singularName": "vendor-purchase-order",
+    "pluralName": "vendor-purchase-orders",
+    "displayName": "Vendor Purchase Order",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "uid": {
+      "type": "string"
+    },
+    "creator": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "vendor": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::vendor.vendor"
+    },
+    "project": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::project.project"
+    },
+    "scheduled_date": {
+      "type": "date"
+    },
+    "budget": {
+      "type": "decimal"
+    },
+    "urgency_level": {
+      "type": "enumeration",
+      "enum": ["Low", "Medium", "High"]
+    },
+    "material_group": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::material-group.material-group"
+    },
+    "vendor_material_requisition": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::vendor-material-requisition.vendor-material-requisition"
+    },
+    "vendor_quotation": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::vendor-quotation.vendor-quotation"
+    },
+    "estimated_amount": {
+      "type": "decimal"
+    },
+    "total_amount": {
+      "type": "decimal"
+    },
+    "total_tax": {
+      "type": "decimal"
+    },
+    "transportation": {
+      "type": "decimal"
+    },
+    "transportation_tax": {
+      "type": "decimal"
+    },
+    "net_amount": {
+      "type": "decimal"
+    },
+    "discount": {
+      "type": "decimal"
+    },
+    "grand_total": {
+      "type": "decimal"
+    },
+    "credit_period": {
+      "type": "decimal"
+    },
+    "delivery_address": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::location.location"
+    },
+    "vendor_term": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::vendor-term.vendor-term"
+    },
+    "vendor_payment_schedule": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::vendor-payment-schedule.vendor-payment-schedule"
+    },
+    "notes": {
+      "type": "richtext"
+    },
+    "remarks": {
+      "type": "richtext"
+    },
+    "approved_by": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::employee.employee"
+    },
+    "approval_remarks": {
+      "type": "richtext"
+    },
+    "creation_employee": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::employee.employee"
+    }
+  }
+}

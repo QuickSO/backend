@@ -1,0 +1,52 @@
+{
+  "kind": "collectionType",
+  "collectionName": "petty_cashes",
+  "info": {
+    "singularName": "petty-cash",
+    "pluralName": "petty-cashes",
+    "displayName": "Petty Cash"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "employee": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::employee.employee"
+    },
+    "uid": {
+      "type": "string"
+    },
+    "remarks": {
+      "type": "richtext"
+    },
+    "payment_mode": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::payment-mode.payment-mode"
+    },
+    "attachment": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "date": {
+      "type": "date"
+    },
+    "amount": {
+      "type": "decimal"
+    },
+    "creator": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    }
+  }
+}

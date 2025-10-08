@@ -1,0 +1,130 @@
+{
+  "kind": "collectionType",
+  "collectionName": "tasks",
+  "info": {
+    "singularName": "task",
+    "pluralName": "tasks",
+    "displayName": "Task",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "start_date": {
+      "type": "date"
+    },
+    "end_date": {
+      "type": "date"
+    },
+    "project": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::project.project",
+      "inversedBy": "tasks"
+    },
+    "creator_uid": {
+      "type": "string",
+      "unique": false
+    },
+    "uid": {
+      "type": "string",
+      "unique": false,
+      "required": false
+    },
+    "creator": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "color": {
+      "type": "string"
+    },
+    "progress": {
+      "type": "decimal",
+      "default": 0
+    },
+    "department": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::department.department"
+    },
+    "sanctioned_budget": {
+      "type": "decimal",
+      "default": 0
+    },
+    "estimated_budget": {
+      "type": "decimal",
+      "default": 0
+    },
+    "parent": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::task.task"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "Task",
+        "Milestone"
+      ]
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "Pending",
+        "Active",
+        "On Hold",
+        "Completed"
+      ]
+    },
+    "hand_tools": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::hand-tool.hand-tool"
+    },
+    "machines": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::machine.machine"
+    },
+    "assignees": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::employee.employee"
+    },
+    "actual_start_date": {
+      "type": "date"
+    },
+    "actual_end_date": {
+      "type": "date"
+    },
+    "dependencies": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::task.task"
+    },
+    "no": {
+      "type": "string"
+    },
+    "is_deleted": {
+      "type": "boolean",
+      "default": false
+    },
+    "milestone": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::task.task"
+    },
+    "sub_milestone": {
+      "type": "json"
+    }
+  }
+}

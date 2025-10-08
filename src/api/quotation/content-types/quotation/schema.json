@@ -1,0 +1,62 @@
+{
+  "kind": "collectionType",
+  "collectionName": "quotations",
+  "info": {
+    "singularName": "quotation",
+    "pluralName": "quotations",
+    "displayName": "Quotation",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "po_from": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::company.company"
+    },
+    "po_number": {
+      "type": "string"
+    },
+    "client": {
+      "type": "json"
+    },
+    "po_address": {
+      "type": "json"
+    },
+    "item": {
+      "type": "json"
+    },
+    "payment_schedule": {
+      "type": "json"
+    },
+    "term": {
+      "type": "json"
+    },
+    "payment_code": {
+      "type": "string"
+    },
+    "payment_date": {
+      "type": "date"
+    },
+    "payment_term": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "uid": {
+      "type": "string"
+    },
+    "bank": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::bank.bank"
+    },
+    "shipped_to": {
+      "type": "json"
+    }
+  }
+}

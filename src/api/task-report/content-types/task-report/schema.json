@@ -1,0 +1,54 @@
+{
+  "kind": "collectionType",
+  "collectionName": "task_reports",
+  "info": {
+    "singularName": "task-report",
+    "pluralName": "task-reports",
+    "displayName": "Task Report"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "employee": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::employee.employee"
+    },
+    "uid": {
+      "type": "string"
+    },
+    "estimated_items": {
+      "type": "json"
+    },
+    "actual_items": {
+      "type": "json"
+    },
+    "issues": {
+      "type": "json"
+    },
+    "date": {
+      "type": "date"
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "Pending",
+        "Verified"
+      ],
+      "default": "Pending"
+    },
+    "details": {
+      "type": "richtext"
+    },
+    "verified_at": {
+      "type": "datetime"
+    },
+    "verified_by": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::employee.employee"
+    }
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "kind": "collectionType",
+  "collectionName": "meeting_attachments",
+  "info": {
+    "singularName": "meeting-attachment",
+    "pluralName": "meeting-attachments",
+    "displayName": "Meeting Attachment",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "attachment": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "file_type": {
+      "type": "string"
+    },
+    "file_size": {
+      "type": "biginteger"
+    },
+    "creator": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "owner": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "uid": {
+      "type": "string"
+    },
+    "meeting": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::meeting.meeting"
+    }
+  }
+}

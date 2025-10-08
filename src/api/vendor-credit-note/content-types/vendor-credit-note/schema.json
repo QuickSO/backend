@@ -1,0 +1,91 @@
+{
+  "kind": "collectionType",
+  "collectionName": "vendor_credit_notes",
+  "info": {
+    "singularName": "vendor-credit-note",
+    "pluralName": "vendor-credit-notes",
+    "displayName": "Vendor Credit Note",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "no": {
+      "type": "string"
+    },
+    "uid": {
+      "type": "string"
+    },
+    "creator": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "attachment": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "employee": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::employee.employee"
+    },
+    "remarks": {
+      "type": "richtext"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "grand_total": {
+      "type": "decimal"
+    },
+    "project": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::project.project"
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "Pending",
+        "Approved"
+      ],
+      "default": "Pending"
+    },
+    "approved_by": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::employee.employee"
+    },
+    "approved_at": {
+      "type": "datetime"
+    },
+    "vendor": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::vendor.vendor"
+    },
+    "creation_employee": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::employee.employee"
+    },
+    "purchase_order": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::vendor-quotation.vendor-quotation"
+    }
+  }
+}

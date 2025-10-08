@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "system_events",
+  "info": {
+    "singularName": "system-event",
+    "pluralName": "system-events",
+    "displayName": "System Event",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "code": {
+      "type": "string"
+    },
+    "data": {
+      "type": "json"
+    },
+    "email_notified": {
+      "type": "boolean",
+      "default": false
+    },
+    "notification_notified": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "kind": "collectionType",
+  "collectionName": "notification_queues",
+  "info": {
+    "singularName": "notification-queue",
+    "pluralName": "notification-queues",
+    "displayName": "Notification Queue"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "data": {
+      "type": "json"
+    },
+    "processed": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

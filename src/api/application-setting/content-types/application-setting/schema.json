@@ -1,0 +1,31 @@
+{
+  "kind": "singleType",
+  "collectionName": "application_settings",
+  "info": {
+    "singularName": "application-setting",
+    "pluralName": "application-settings",
+    "displayName": "Application Setting"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "monthly_maximum_storage_in_gb": {
+      "type": "integer",
+      "default": 50
+    },
+    "maximum_users": {
+      "type": "integer",
+      "default": 1000
+    },
+    "maximum_storage_in_gb": {
+      "type": "integer",
+      "default": 50
+    },
+    "allows_concurrent_logins": {
+      "type": "boolean",
+      "default": true
+    }
+  }
+}

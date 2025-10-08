@@ -1,0 +1,82 @@
+{
+  "kind": "collectionType",
+  "collectionName": "sub_contractor_credit_notes",
+  "info": {
+    "singularName": "sub-contractor-credit-note",
+    "pluralName": "sub-contractor-credit-notes",
+    "displayName": "Sub Contractor Credit Note"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "no": {
+      "type": "string"
+    },
+    "uid": {
+      "type": "string"
+    },
+    "creator": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "attachment": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images", "files", "videos", "audios"]
+    },
+    "employee": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::employee.employee"
+    },
+    "remarks": {
+      "type": "richtext"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "grand_total": {
+      "type": "decimal"
+    },
+    "project": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::project.project"
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": ["Pending", "Approved"],
+      "default": "Pending"
+    },
+    "approved_by": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::employee.employee"
+    },
+    "approved_at": {
+      "type": "datetime"
+    },
+    "sub_contractor": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::sub-contractor.sub-contractor"
+    },
+    "creation_employee": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::employee.employee"
+    },
+    "work_order": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::sub-contractor-quotation.sub-contractor-quotation"
+    }
+  }
+}

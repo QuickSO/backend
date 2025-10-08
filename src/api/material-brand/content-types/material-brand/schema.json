@@ -1,0 +1,32 @@
+{
+  "kind": "collectionType",
+  "collectionName": "material_brands",
+  "info": {
+    "singularName": "material-brand",
+    "pluralName": "material-brands",
+    "displayName": "Material Brand"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "uid": {
+      "type": "string"
+    },
+    "creator": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "code": {
+      "type": "string"
+    }
+  }
+}

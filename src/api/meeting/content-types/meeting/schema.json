@@ -1,0 +1,88 @@
+{
+  "kind": "collectionType",
+  "collectionName": "meetings",
+  "info": {
+    "singularName": "meeting",
+    "pluralName": "meetings",
+    "displayName": "Meeting",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "agenda": {
+      "type": "richtext"
+    },
+    "project": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::project.project"
+    },
+    "uid": {
+      "type": "string",
+      "required": true,
+      "unique": false
+    },
+    "creator": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "meeting_type": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::meeting-type.meeting-type"
+    },
+    "host": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::employee.employee"
+    },
+    "tasks": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::task.task"
+    },
+    "members": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::employee.employee"
+    },
+    "notes_prepared_by": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::employee.employee"
+    },
+    "requirements": {
+      "type": "richtext"
+    },
+    "target": {
+      "type": "richtext"
+    },
+    "employee_group": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::employee-group.employee-group"
+    },
+    "started_at": {
+      "type": "datetime"
+    },
+    "rescheduled_to": {
+      "type": "datetime"
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": ["Planned", "Rescheduled", "Cancelled", "Done"],
+      "default": "Planned"
+    },
+    "is_deleted": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

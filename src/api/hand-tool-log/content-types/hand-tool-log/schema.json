@@ -1,0 +1,54 @@
+{
+  "kind": "collectionType",
+  "collectionName": "hand_tool_logs",
+  "info": {
+    "singularName": "hand-tool-log",
+    "pluralName": "hand-tool-logs",
+    "displayName": "Hand Tool Log",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "hand_tool": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::hand-tool.hand-tool"
+    },
+    "uid": {
+      "type": "string"
+    },
+    "creator": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "in_time": {
+      "type": "time"
+    },
+    "out_time": {
+      "type": "time"
+    },
+    "date": {
+      "type": "date"
+    },
+    "location": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::location.location"
+    },
+    "required_by": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::employee.employee"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "no": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "kind": "collectionType",
+  "collectionName": "location_check_ins",
+  "info": {
+    "singularName": "location-check-in",
+    "pluralName": "location-check-ins",
+    "displayName": "Location Check In"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "latitude": {
+      "type": "decimal"
+    },
+    "longitude": {
+      "type": "decimal"
+    },
+    "employee": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::employee.employee"
+    },
+    "uid": {
+      "type": "string"
+    },
+    "location": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::location.location"
+    },
+    "is_valid_location": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

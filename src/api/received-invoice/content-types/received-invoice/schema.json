@@ -1,0 +1,112 @@
+{
+  "kind": "collectionType",
+  "collectionName": "received_invoices",
+  "info": {
+    "singularName": "received-invoice",
+    "pluralName": "received-invoices",
+    "displayName": "Received Invoice",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "no": {
+      "type": "string"
+    },
+    "employee": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::employee.employee"
+    },
+    "attachment": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images", "files", "videos", "audios"]
+    },
+    "remarks": {
+      "type": "richtext"
+    },
+    "approved_by": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::employee.employee"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "uid": {
+      "type": "string"
+    },
+    "creator": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "creation_employee": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::employee.employee"
+    },
+    "agency": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::agency.agency"
+    },
+    "sub_contractor": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::sub-contractor.sub-contractor"
+    },
+    "vendor": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::vendor.vendor"
+    },
+    "project": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::project.project"
+    },
+    "payment_schedule": {
+      "type": "json"
+    },
+    "amount_payable": {
+      "type": "decimal"
+    },
+    "tds_percentage": {
+      "type": "decimal"
+    },
+    "retention_paid": {
+      "type": "decimal"
+    },
+    "gst_retention_paid": {
+      "type": "decimal"
+    },
+    "tds_amount": {
+      "type": "decimal"
+    },
+    "reconciliation": {
+      "type": "json"
+    },
+    "invoice_date": {
+      "type": "date"
+    },
+    "invoice_type": {
+      "type": "string"
+    },
+    "approved_by_accounts": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::employee.employee"
+    },
+    "status": {
+      "type": "string"
+    },
+    "cheque_no": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "kind": "collectionType",
+  "collectionName": "project_members",
+  "info": {
+    "singularName": "project-member",
+    "pluralName": "project-members",
+    "displayName": "Project Member",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "project": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::project.project"
+    },
+    "employee": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::employee.employee"
+    },
+    "job_title": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::job-title.job-title"
+    },
+    "uid": {
+      "type": "string"
+    },
+    "creator": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    }
+  }
+}

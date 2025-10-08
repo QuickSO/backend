@@ -1,0 +1,32 @@
+{
+  "kind": "singleType",
+  "collectionName": "inventory_settings",
+  "info": {
+    "singularName": "inventory-setting",
+    "pluralName": "inventory-settings",
+    "displayName": "Inventory Setting",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "service_cost": {
+      "type": "decimal",
+      "default": 0
+    },
+    "risk_cost": {
+      "type": "decimal",
+      "default": 0
+    },
+    "capital_cost": {
+      "type": "decimal",
+      "default": 0
+    },
+    "storage_cost": {
+      "type": "decimal",
+      "default": 0
+    }
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "kind": "collectionType",
+  "collectionName": "conversations",
+  "info": {
+    "singularName": "conversation",
+    "pluralName": "conversations",
+    "displayName": "Conversation",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "creator": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "uid": {
+      "type": "string"
+    },
+    "last_message": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::chat-message.chat-message"
+    },
+    "members": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::employee.employee"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": ["employee-group", "project", "employee"]
+    },
+    "project_id": {
+      "type": "biginteger"
+    }
+  }
+}
