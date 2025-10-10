@@ -12,37 +12,29 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "task_code": {
-      "type": "string",
-      "required": true
-    },
     "contract_short_name": {
       "type": "text",
-      "required": true
+      "required": false
     },
     "structure_type_fk": {
       "type": "text",
-      "required": true
+      "required": false
     },
     "structure": {
       "type": "string",
-      "required": true
+      "required": false
     },
     "component": {
       "type": "string",
-      "required": true
+      "required": false
     },
     "component_id": {
       "type": "string",
-      "required": true
-    },
-    "activity_name": {
-      "type": "text",
-      "required": true
+      "required": false
     },
     "weightages": {
       "type": "float",
-      "required": true
+      "required": false
     },
     "unit": {
       "type": "enumeration",
@@ -54,23 +46,33 @@
     },
     "scope": {
       "type": "integer",
-      "required": true,
+      "required": false,
       "max": 100,
       "min": 0
     },
     "bl_project_start": {
       "type": "date",
-      "required": true
+      "required": false
     },
     "bl_project_finish": {
       "type": "date",
-      "required": true
+      "required": false
     },
     "completed": {
       "type": "integer",
-      "required": true,
+      "required": false,
       "max": 100,
       "min": 0
+    },
+    "project": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::project.project"
+    },
+    "task": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::task.task"
     }
   }
 }
