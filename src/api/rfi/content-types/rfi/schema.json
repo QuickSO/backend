@@ -79,6 +79,52 @@
     },
     "structure_id": {
       "type": "string"
+    },
+    "stage1_approval": {
+      "type": "enumeration",
+      "enum": [
+        "PENDING",
+        "APPROVED",
+        "REJECTED"
+      ],
+      "default": "PENDING"
+    },
+    "approver1_comment": {
+      "type": "richtext"
+    },
+    "stage2_approval": {
+      "type": "enumeration",
+      "enum": [
+        "PENDING",
+        "APPROVED",
+        "REJECTED"
+      ],
+      "default": "PENDING"
+    },
+    "approver2_comment": {
+      "type": "richtext"
+    },
+    "approval_workflow": {
+      "type": "enumeration",
+      "enum": [
+        "PENDING_STAGE_1",
+        "PENDING_STAGE_2",
+        "APPROVED",
+        "REJECTED"
+      ],
+      "default": "PENDING_STAGE_1"
+    },
+    "approver1_name": {
+      "type": "string"
+    },
+    "approver2_name": {
+      "type": "string"
+    },
+    "approver1_uid": {
+      "type": "string"
+    },
+    "approver2_uid": {
+      "type": "string"
     }
   }
 }
