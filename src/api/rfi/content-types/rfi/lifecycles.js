@@ -1,239 +1,70 @@
-"use strict";
+const { isEmpty } = require("lodash");
 
-/**
- *  notification controller
- */
+const sendEmail = async (templateId, strapi, result) => {
+  try {
+    let recipients = [];
 
-const { createCoreController } = require("@strapi/strapi").factories;
-const { isEmpty, uniq } = require("lodash");
+    const project = result?.project;
+    if (project) {
+      project?.project_managers?.forEach(pm => {
+        if (pm.email_1) recipients.push(pm.email_1);
+        if (pm.email_2) recipients.push(pm.email_2);
+      });
 
-const splitSemicolons = (s) =>
-  (typeof s === "string" && s.trim() !== "" ? s.split(";") : []).map((x) =>
-    String(x || "").trim()
-  );
+      project?.members?.forEach(member => {
+        if (member.email_1) recipients.push(member.email_1);
+        if (member.email_2) recipients.push(member.email_2);
+      });
+    }
 
-const compactEmails = (...vals) =>
-  uniq(
-    vals
-      .flat()
-      .map((x) => String(x || "").trim())
-      .filter(Boolean)
-  );
+    if (result?.assigned_to) {
+      if (result.assigned_to.email_1) recipients.push(result.assigned_to.email_1);
+      if (result.assigned_to.email_2) recipients.push(result.assigned_to.email_2);
+    }
 
-module.exports = createCoreController(
-  "api::notification.notification",
-  ({ strapi }) => ({
-    async getNotificationsList(ctx) {
-      try {
-        const { recipient_uid = "" } = ctx?.request?.body;
-        if (!recipient_uid) {
-          throw new Error("Recipient UID is required!");
-        }
+    if (recipients.length > 0) {
+      await strapi.entityService.create("api::email-queue.email-queue", {
+        data: {
+          template: templateId,
+          data: result,
+          recipients,
+        },
+      });
+    }
+  } catch (error) {
+    console.error("[rfi.sendEmail]", error);
+  }
+};
 
-        // Resolve recipient sources (employee/app-user)
-        const [recipient, appUser] = await Promise.all([
-          strapi.db.query("api::employee.employee").findOne({
-            where: { uid: recipient_uid },
-          }),
-          strapi.db.query("api::app-user.app-user").findOne({
-            where: { uid: recipient_uid },
-          }),
-        ]);
+module.exports = {
+  async afterCreate(event) {
+    try {
+      const { result } = event;
+      const entry = await strapi.db.query("api::rfi.rfi").findOne({
+        where: { id: result.id },
+        populate: { project: { populate: { project_managers: true, members: true } }, assigned_to: true },
+      });
 
-        if (isEmpty(appUser) && isEmpty(recipient)) {
-          throw new Error("Recipient not found!");
-        }
-
-        const email1 = recipient?.email_1 || appUser?.email_1 || "";
-        const email2 = recipient?.email_2 || appUser?.email_2 || "";
-        const myEmails = compactEmails(email1, email2);
-
-        // Admins see all; non-admins filtered by recipients (emails)
-        let filters = {};
-        if (isEmpty(appUser) || appUser?.is_admin === false) {
-          filters = {
-            $or: [
-              { recipients: { $containsi: email1 } },
-              { recipients: { $containsi: email2 } },
-            ],
-          };
-        }
-
-        let entries = await strapi.db
-          .query("api::notification.notification")
-          .findMany({
-            where: filters,
-            orderBy: { createdAt: "desc" },
-          });
-
-        // Compute READ/UNREAD per user from read_recipients (semicolon-separated)
-        entries = entries.map((entry) => {
-          const readEmails = splitSemicolons(entry?.read_recipients);
-          const didRead = myEmails.some((em) => readEmails.includes(em));
-          return {
-            ...entry,
-            status: didRead ? "READ" : "UNREAD",
-          };
-        });
-
-        ctx.body = {
-          success: true,
-          message: "Successfully get all notifications!",
-          data: {
-            data: entries,
-            meta: {
-              pagination: {
-                start: 0,
-                limit: 9999,
-                total: entries?.length || 0,
-              },
-            },
-          },
-        };
-      } catch (error) {
-        strapi.log.error("[notification.getNotificationsList]", error);
-        ctx.body = {
-          success: false,
-          message: error.message ?? "Failed to get all notifications!",
-        };
+      if (entry) {
+        await sendEmail("rfi-created", strapi, entry);
       }
-    },
+    } catch (error) {
+      console.error("[rfi.afterCreate]", error);
+    }
+  },
+  async afterUpdate(event) {
+    try {
+      const { result } = event;
+      const entry = await strapi.db.query("api::rfi.rfi").findOne({
+        where: { id: result.id },
+        populate: { project: { populate: { project_managers: true, members: true } }, assigned_to: true },
+      });
 
-    async getNotificationDetails(ctx) {
-      try {
-        const { id } = ctx?.request?.params;
-        const { recipient_uid = "" } = ctx?.request?.body;
-
-        if (!recipient_uid) {
-          throw new Error("Recipient UID is required!");
-        }
-
-        const [recipient, appUser] = await Promise.all([
-          strapi.db.query("api::employee.employee").findOne({
-            where: { uid: recipient_uid },
-          }),
-          strapi.db.query("api::app-user.app-user").findOne({
-            where: { uid: recipient_uid },
-          }),
-        ]);
-
-        if (isEmpty(appUser) && isEmpty(recipient)) {
-          throw new Error("Recipient not found!");
-        }
-
-        const email1 = recipient?.email_1 || appUser?.email_1 || "";
-        const email2 = recipient?.email_2 || appUser?.email_2 || "";
-
-        let filters = {};
-        if (isEmpty(appUser) || appUser?.is_admin === false) {
-          filters = {
-            $and: [
-              { id },
-              {
-                $or: [
-                  { recipients: { $containsi: email1 } },
-                  { recipients: { $containsi: email2 } },
-                ],
-              },
-            ],
-          };
-        } else {
-          filters = { id };
-        }
-
-        const entry = await strapi.db
-          .query("api::notification.notification")
-          .findOne({ where: filters });
-
-        if (isEmpty(entry)) {
-          throw new Error("Notification not found!");
-        }
-
-        // Mark THIS user as read (append their email; don't overwrite)
-        const currentReads = splitSemicolons(entry?.read_recipients);
-        const nextReads = uniq(currentReads.concat(compactEmails(email1, email2)));
-
-        await strapi.entityService.update(
-          "api::notification.notification",
-          entry?.id,
-          {
-            data: {
-              read_recipients: nextReads.join(";"),
-            },
-          }
-        );
-
-        ctx.body = {
-          success: true,
-          message: "Successfully get notification details!",
-          data: entry,
-        };
-      } catch (error) {
-        strapi.log.error("[notification.getNotificationDetails]", error);
-        ctx.body = {
-          success: false,
-          message: error.message ?? "Failed to get notification details!",
-        };
+      if (entry) {
+        await sendEmail("rfi-updated", strapi, entry);
       }
-    },
-
-    async countUnreadNotifications(ctx) {
-      try {
-        const { recipient_uid = "" } = ctx?.request?.body;
-        if (!recipient_uid) {
-          throw new Error("Recipient UID is required!");
-        }
-
-        const [recipient, appUser] = await Promise.all([
-          strapi.db.query("api::employee.employee").findOne({
-            where: { uid: recipient_uid },
-          }),
-          strapi.db.query("api::app-user.app-user").findOne({
-            where: { uid: recipient_uid },
-          }),
-        ]);
-
-        if (isEmpty(appUser) && isEmpty(recipient)) {
-          throw new Error("Recipient not found!");
-        }
-
-        const email1 = recipient?.email_1 || appUser?.email_1 || "";
-        const email2 = recipient?.email_2 || appUser?.email_2 || "";
-        const myEmails = compactEmails(email1, email2);
-
-        let filters = {};
-        if (isEmpty(appUser) || appUser?.is_admin === false) {
-          filters = {
-            $or: [
-              { recipients: { $containsi: email1 } },
-              { recipients: { $containsi: email2 } },
-            ],
-          };
-        }
-
-        const entries = await strapi.db
-          .query("api::notification.notification")
-          .findMany({ where: filters });
-
-        let count = 0;
-        entries.forEach((entry) => {
-          const readEmails = splitSemicolons(entry?.read_recipients);
-          const didRead = myEmails.some((em) => readEmails.includes(em));
-          if (!didRead) count += 1;
-        });
-
-        ctx.body = {
-          success: true,
-          message: "Successfully counted unread notifications!",
-          data: { count },
-        };
-      } catch (error) {
-        strapi.log.error("[notification.countUnreadNotifications]", error);
-        ctx.body = {
-          success: false,
-          message: error.message ?? "Failed to count unread notifications!",
-        };
-      }
-    },
-  })
-);
+    } catch (error) {
+      console.error("[rfi.afterUpdate]", error);
+    }
+  },
+};
