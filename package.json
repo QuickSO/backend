@@ -1,0 +1,52 @@
+{
+  "name": "quickso-cms",
+  "private": true,
+  "version": "0.1.0",
+  "description": "A Strapi application",
+  "scripts": {
+    "develop": "strapi develop",
+    "start": "strapi start",
+    "build": "strapi build",
+    "strapi": "strapi"
+  },
+  "dependencies": {
+    "@strapi/plugin-documentation": "^4.2.3",
+    "@strapi/plugin-graphql": "4.2.3",
+    "@strapi/plugin-i18n": "^4.2.3",
+    "@strapi/plugin-users-permissions": "^4.2.3",
+    "@strapi/provider-email-nodemailer": "^4.10.5",
+    "@strapi/strapi": "^4.2.3",
+    "aws-sdk": "^2.1409.0",
+    "axios": "^0.27.2",
+    "crypto-js": "^4.1.1",
+    "dayjs": "^1.11.18",
+    "dotenv": "^16.0.1",
+    "exceljs": "^4.4.0",
+    "geolib": "^3.3.4",
+    "image-to-base64": "^2.2.0",
+    "json2csv": "^5.0.7",
+    "knex": "^2.2.0",
+    "lodash": "^4.17.21",
+    "md5": "^2.3.0",
+    "moment": "^2.30.1",
+    "moment-timezone": "^0.5.46",
+    "monaco-editor-webpack-plugin": "^7.0.1",
+    "mustache": "^4.2.0",
+    "pg": "8.6.0",
+    "socket.io": "^4.5.1",
+    "strapi-plugin-import-export-entries": "^1.11.1",
+    "uuidv4": "^6.2.13",
+    "yarn": "^1.22.22"
+  },
+  "author": {
+    "name": "A Strapi developer"
+  },
+  "strapi": {
+    "uuid": "6b78fcde-1fd9-49ba-a1db-9bc0649371d1"
+  },
+  "engines": {
+    "node": ">=12.x.x <=16.x.x",
+    "npm": ">=6.0.0"
+  },
+  "license": "MIT"
+}

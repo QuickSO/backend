@@ -1,0 +1,81 @@
+{
+  "kind": "collectionType",
+  "collectionName": "stock_ledgers",
+  "info": {
+    "singularName": "stock-ledger",
+    "pluralName": "stock-ledgers",
+    "displayName": "Stock Ledger",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "uid": {
+      "type": "string"
+    },
+    "creator": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "location": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::location.location"
+    },
+    "material_item": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::material-item.material-item"
+    },
+    "quantity": {
+      "type": "decimal",
+      "default": 0
+    },
+    "material_unit": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::material-unit.material-unit"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "physically_counted_quantity": {
+      "type": "decimal",
+      "default": 0
+    },
+    "is_deleted": {
+      "type": "boolean",
+      "default": false
+    },
+    "task_material": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::task-material.task-material"
+    },
+    "remarks": {
+      "type": "richtext"
+    },
+    "project": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::project.project"
+    },
+    "source": {
+      "type": "enumeration",
+      "enum": ["AUTO", "MANUAL"]
+    },
+    "vendor_material_receivable": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::vendor-material-receivable.vendor-material-receivable"
+    },
+    "vendor": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::vendor.vendor"
+    }
+  }
+}

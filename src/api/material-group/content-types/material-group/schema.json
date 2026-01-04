@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "material_groups",
+  "info": {
+    "singularName": "material-group",
+    "pluralName": "material-groups",
+    "displayName": "Material Group",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "uid": {
+      "type": "string"
+    },
+    "creator": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "code": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "kind": "collectionType",
+  "collectionName": "file_item_role_permissions",
+  "info": {
+    "singularName": "file-item-role-permission",
+    "pluralName": "file-item-role-permissions",
+    "displayName": "File Item Role Permission"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "app_role": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::app-role.app-role"
+    },
+    "file_role": {
+      "type": "enumeration",
+      "enum": [
+        "Viewer",
+        "Editor"
+      ],
+      "default": "Viewer"
+    },
+    "uid": {
+      "type": "string"
+    },
+    "is_deleted": {
+      "type": "boolean",
+      "default": false
+    },
+    "file_item": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::file-item.file-item"
+    }
+  }
+}

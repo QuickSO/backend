@@ -1,0 +1,66 @@
+{
+  "kind": "collectionType",
+  "collectionName": "sub_contractor_terms",
+  "info": {
+    "singularName": "sub-contractor-term",
+    "pluralName": "sub-contractor-terms",
+    "displayName": "Sub Contractor Term",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "uid": {
+      "type": "string"
+    },
+    "creator": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "heading": {
+      "type": "string"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "work_group": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::work-group.work-group"
+    },
+    "sub_contractor": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::sub-contractor.sub-contractor"
+    },
+    "approved_by": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::employee.employee"
+    },
+    "approval_remarks": {
+      "type": "richtext"
+    },
+    "work_item": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::work-item.work-item"
+    },
+    "work_unit": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::work-unit.work-unit"
+    },
+    "creation_employee": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::employee.employee"
+    },
+    "term_and_condition": {
+      "type": "json"
+    }
+  }
+}

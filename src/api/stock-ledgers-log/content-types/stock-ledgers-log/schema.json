@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "stock_ledgers_logs",
+  "info": {
+    "singularName": "stock-ledgers-log",
+    "pluralName": "stock-ledgers-logs",
+    "displayName": "Stock Ledgers Log",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "date": {
+      "type": "date"
+    },
+    "material_item": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::material-item.material-item"
+    },
+    "material_item_id": {
+      "type": "biginteger"
+    },
+    "quantity": {
+      "type": "biginteger",
+      "default": "0"
+    }
+  }
+}

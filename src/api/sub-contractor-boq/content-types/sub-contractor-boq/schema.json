@@ -1,0 +1,38 @@
+{
+  "kind": "collectionType",
+  "collectionName": "sub_contractor_boqs",
+  "info": {
+    "singularName": "sub-contractor-boq",
+    "pluralName": "sub-contractor-boqs",
+    "displayName": "Sub Contractor Boq",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "boq_item": {
+      "type": "json"
+    },
+    "boq_number": {
+      "type": "decimal"
+    },
+    "date": {
+      "type": "date"
+    },
+    "employee": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::employee.employee"
+    },
+    "project": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::project.project"
+    }
+  }
+}

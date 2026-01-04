@@ -1,0 +1,39 @@
+{
+  "kind": "collectionType",
+  "collectionName": "letterheads",
+  "info": {
+    "singularName": "letterhead",
+    "pluralName": "letterheads",
+    "displayName": "Letterhead"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "uid": {
+      "type": "string"
+    },
+    "creator": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "image_file": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "description": {
+      "type": "richtext"
+    }
+  }
+}

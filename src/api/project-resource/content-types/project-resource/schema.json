@@ -1,0 +1,53 @@
+{
+  "kind": "collectionType",
+  "collectionName": "project_resources",
+  "info": {
+    "singularName": "project-resource",
+    "pluralName": "project-resources",
+    "displayName": "Project Resource",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "uid": {
+      "type": "string"
+    },
+    "project": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::project.project"
+    },
+    "resource_type": {
+      "type": "enumeration",
+      "enum": [
+        "Employee",
+        "Vendor",
+        "Sub Contractor",
+        "Agency"
+      ]
+    },
+    "email": {
+      "type": "string"
+    },
+    "color": {
+      "type": "string"
+    },
+    "start_date": {
+      "type": "date"
+    },
+    "end_date": {
+      "type": "date"
+    },
+    "notes": {
+      "type": "richtext"
+    },
+    "creator": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    }
+  }
+}

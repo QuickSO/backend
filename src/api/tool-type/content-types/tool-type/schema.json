@@ -1,0 +1,29 @@
+{
+  "kind": "collectionType",
+  "collectionName": "tool_types",
+  "info": {
+    "singularName": "tool-type",
+    "pluralName": "tool-types",
+    "displayName": "Tool Type"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "uid": {
+      "type": "string"
+    },
+    "creator": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    }
+  }
+}

@@ -1,0 +1,138 @@
+{
+  "kind": "collectionType",
+  "collectionName": "vendor_material_requisitions",
+  "info": {
+    "singularName": "vendor-material-requisition",
+    "pluralName": "vendor-material-requisitions",
+    "displayName": "Vendor Material Requisition",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "no": {
+      "type": "string"
+    },
+    "project": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::project.project"
+    },
+    "sub_project": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::project.project"
+    },
+    "budget": {
+      "type": "decimal"
+    },
+    "urgency_level": {
+      "type": "enumeration",
+      "enum": ["High", "Medium", "Low"]
+    },
+    "material_group": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::material-group.material-group"
+    },
+    "scheduled_date": {
+      "type": "date"
+    },
+    "estimated_amount": {
+      "type": "decimal"
+    },
+    "delivery_address": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::location.location"
+    },
+    "vendor_term": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::vendor-term.vendor-term"
+    },
+    "remarks": {
+      "type": "richtext"
+    },
+    "uid": {
+      "type": "string"
+    },
+    "creator": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "vendor": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::vendor.vendor"
+    },
+    "heading": {
+      "type": "string"
+    },
+    "terms": {
+      "type": "json"
+    },
+    "material_items": {
+      "type": "json"
+    },
+    "payment_schedules": {
+      "type": "json"
+    },
+    "vendors": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::vendor.vendor"
+    },
+    "material_items_remarks": {
+      "type": "richtext"
+    },
+    "payment_schedules_remarks": {
+      "type": "richtext"
+    },
+    "terms_remarks": {
+      "type": "richtext"
+    },
+    "approved_by": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::employee.employee"
+    },
+    "delivery_date": {
+      "type": "date"
+    },
+    "expected_delivery_date": {
+      "type": "date"
+    },
+    "approval_remarks": {
+      "type": "richtext"
+    },
+    "is_deleted": {
+      "type": "boolean",
+      "default": false
+    },
+    "creation_employee": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::employee.employee"
+    },
+    "vendor_boq": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::vendor-boq.vendor-boq"
+    },
+    "task": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::task.task"
+    },
+    "retention_amount": {
+      "type": "decimal"
+    },
+    "retention_percentage": {
+      "type": "decimal"
+    }
+  }
+}

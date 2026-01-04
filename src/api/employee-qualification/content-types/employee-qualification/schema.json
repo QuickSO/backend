@@ -1,0 +1,61 @@
+{
+  "kind": "collectionType",
+  "collectionName": "employee_qualifications",
+  "info": {
+    "singularName": "employee-qualification",
+    "pluralName": "employee-qualifications",
+    "displayName": "Employee Qualification",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "employee": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::employee.employee"
+    },
+    "name": {
+      "type": "string"
+    },
+    "uid": {
+      "type": "string"
+    },
+    "creator": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "qualification_no": {
+      "type": "string"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "course": {
+      "type": "string"
+    },
+    "degree": {
+      "type": "string"
+    },
+    "university": {
+      "type": "string"
+    },
+    "front_side": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "passing": {
+      "type": "integer"
+    }
+  }
+}

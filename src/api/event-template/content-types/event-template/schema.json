@@ -1,0 +1,51 @@
+{
+  "kind": "collectionType",
+  "collectionName": "event_templates",
+  "info": {
+    "singularName": "event-template",
+    "pluralName": "event-templates",
+    "displayName": "Event Template",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "uid": {
+      "type": "string"
+    },
+    "creator": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "name": {
+      "type": "string"
+    },
+    "no": {
+      "type": "string"
+    },
+    "members": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::employee.employee"
+    },
+    "url": {
+      "type": "string"
+    },
+    "time": {
+      "type": "datetime"
+    },
+    "frequency": {
+      "type": "enumeration",
+      "enum": [
+        "Daily",
+        "Weekly",
+        "Monthly",
+        "Yearly",
+        "Only Once"
+      ]
+    }
+  }
+}

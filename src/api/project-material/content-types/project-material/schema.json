@@ -1,0 +1,59 @@
+{
+  "kind": "collectionType",
+  "collectionName": "project_materials",
+  "info": {
+    "singularName": "project-material",
+    "pluralName": "project-materials",
+    "displayName": "Project Material",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "project": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::project.project"
+    },
+    "creator": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "uid": {
+      "type": "string"
+    },
+    "material_group": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::material-group.material-group"
+    },
+    "material_item": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::material-item.material-item"
+    },
+    "material_unit": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::material-unit.material-unit"
+    },
+    "amount": {
+      "type": "decimal"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "Pending",
+        "Approved",
+        "Rejected"
+      ],
+      "default": "Pending"
+    }
+  }
+}

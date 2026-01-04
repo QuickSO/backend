@@ -1,0 +1,58 @@
+{
+  "kind": "collectionType",
+  "collectionName": "revised_shifts",
+  "info": {
+    "singularName": "revised-shift",
+    "pluralName": "revised-shifts",
+    "displayName": "Revised Shift",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "from_employee": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::employee.employee"
+    },
+    "to_employee": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::employee.employee"
+    },
+    "uid": {
+      "type": "string"
+    },
+    "creator": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "from_shift": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::shift.shift"
+    },
+    "to_shift": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::shift.shift"
+    },
+    "date": {
+      "type": "date"
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "Pending",
+        "Accepted",
+        "Rejected"
+      ]
+    },
+    "description": {
+      "type": "richtext"
+    }
+  }
+}

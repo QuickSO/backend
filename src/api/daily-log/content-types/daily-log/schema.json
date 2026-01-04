@@ -1,0 +1,39 @@
+{
+  "kind": "collectionType",
+  "collectionName": "daily_logs",
+  "info": {
+    "singularName": "daily-log",
+    "pluralName": "daily-logs",
+    "displayName": "Daily Log"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "creator": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "user": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "login_time": {
+      "type": "datetime"
+    },
+    "log_out_time": {
+      "type": "datetime"
+    },
+    "uid": {
+      "type": "string"
+    },
+    "employee": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::employee.employee"
+    }
+  }
+}

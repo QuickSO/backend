@@ -1,0 +1,29 @@
+{
+  "kind": "collectionType",
+  "collectionName": "schedulers",
+  "info": {
+    "singularName": "scheduler",
+    "pluralName": "schedulers",
+    "displayName": "Scheduler"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "creator": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "uid": {
+      "type": "string"
+    }
+  }
+}

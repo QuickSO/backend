@@ -1,0 +1,140 @@
+{
+  "kind": "collectionType",
+  "collectionName": "sub_contractor_work_orders",
+  "info": {
+    "singularName": "sub-contractor-work-order",
+    "pluralName": "sub-contractor-work-orders",
+    "displayName": "Sub Contractor Work Order",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "uid": {
+      "type": "string"
+    },
+    "creator": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "project": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::project.project"
+    },
+    "scheduled_date": {
+      "type": "date"
+    },
+    "working_address": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::location.location"
+    },
+    "work_group": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::work-group.work-group"
+    },
+    "quotation": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::sub-contractor-quotation.sub-contractor-quotation"
+    },
+
+    "budget": {
+      "type": "decimal"
+    },
+    "estimated_amount": {
+      "type": "decimal"
+    },
+    "total_amount": {
+      "type": "decimal"
+    },
+    "total_tax": {
+      "type": "decimal"
+    },
+    "transportation": {
+      "type": "decimal"
+    },
+    "transportation_tax": {
+      "type": "decimal"
+    },
+    "net_amount": {
+      "type": "decimal"
+    },
+    "discount": {
+      "type": "decimal"
+    },
+    "grand_total": {
+      "type": "decimal"
+    },
+    "credit_period": {
+      "type": "decimal"
+    },
+    "term": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::sub-contractor-term.sub-contractor-term"
+    },
+
+    "remarks": {
+      "type": "richtext"
+    },
+    "urgency_level": {
+      "type": "enumeration",
+      "enum": ["Low", "Medium", "High"]
+    },
+    "approved_by": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::employee.employee"
+    },
+    "approval_remarks": {
+      "type": "richtext"
+    },
+    "sub_contractor": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::sub-contractor.sub-contractor"
+    },
+    "creation_employee": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::employee.employee"
+    },
+    "heading": {
+      "type": "string"
+    },
+    "sub_contractor_quotation": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::sub-contractor-quotation.sub-contractor-quotation"
+    },
+    "delivery_address": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::location.location"
+    },
+    "sub_contractor_term": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::sub-contractor-term.sub-contractor-term"
+    },
+    "notes": {
+      "type": "richtext"
+    },
+    "sc_requirement_form": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::sub-contractor-requirement-form.sub-contractor-requirement-form"
+    },
+    "sc_payment_schedule": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::sub-contractor-payment-schedule.sub-contractor-payment-schedule"
+    }
+  }
+}

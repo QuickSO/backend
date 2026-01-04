@@ -1,0 +1,147 @@
+{
+  "kind": "collectionType",
+  "collectionName": "agency_quotations",
+  "info": {
+    "singularName": "agency-quotation",
+    "pluralName": "agency-quotations",
+    "displayName": "Agency Quotation",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "uid": {
+      "type": "string"
+    },
+    "agency": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::agency.agency"
+    },
+    "creator": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "project": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::project.project"
+    },
+    "working_address": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::location.location"
+    },
+    "work_group": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::work-group.work-group"
+    },
+    "requirement_form": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::agency-requirement-form.agency-requirement-form"
+    },
+    "budget": {
+      "type": "decimal"
+    },
+    "estimated_amount": {
+      "type": "decimal"
+    },
+    "term": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::agency-term.agency-term"
+    },
+    "payment_schedule": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::agency-payment-schedule.agency-payment-schedule"
+    },
+    "remarks": {
+      "type": "richtext"
+    },
+    "urgency_level": {
+      "type": "enumeration",
+      "enum": ["Low", "Medium", "High"]
+    },
+    "heading": {
+      "type": "string"
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": ["Pending", "Approved"],
+      "default": "Pending"
+    },
+    "approved_by": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::employee.employee"
+    },
+    "approval_remarks": {
+      "type": "richtext"
+    },
+    "creation_employee": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::employee.employee"
+    },
+    "agency_requirement_form": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::agency-requirement-form.agency-requirement-form"
+    },
+    "delivery_address": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::location.location"
+    },
+    "agency_term": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::agency-term.agency-term"
+    },
+    "agency_payment_schedule": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::agency-payment-schedule.agency-payment-schedule"
+    },
+    "work_items_remarks": {
+      "type": "richtext"
+    },
+    "payment_schedules_remarks": {
+      "type": "richtext"
+    },
+    "terms_remarks": {
+      "type": "richtext"
+    },
+    "terms": {
+      "type": "json"
+    },
+    "payment_schedules": {
+      "type": "json"
+    },
+    "work_items": {
+      "type": "json"
+    },
+    "expected_delivery_date": {
+      "type": "date"
+    },
+    "delivery_date": {
+      "type": "date"
+    },
+    "work_item_notes": {
+      "type": "json"
+    },
+    "grand_total_amount": {
+      "type": "decimal"
+    },
+    "is_deleted": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

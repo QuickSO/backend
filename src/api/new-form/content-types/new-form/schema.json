@@ -1,0 +1,78 @@
+{
+  "kind": "collectionType",
+  "collectionName": "new_forms",
+  "info": {
+    "singularName": "new-form",
+    "pluralName": "new-forms",
+    "displayName": "New Form",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "contract_short_name": {
+      "type": "text",
+      "required": false
+    },
+    "structure_type_fk": {
+      "type": "text",
+      "required": false
+    },
+    "structure": {
+      "type": "string",
+      "required": false
+    },
+    "component": {
+      "type": "string",
+      "required": false
+    },
+    "component_id": {
+      "type": "string",
+      "required": false
+    },
+    "weightages": {
+      "type": "float",
+      "required": false
+    },
+    "unit": {
+      "type": "enumeration",
+      "enum": [
+        "CUM",
+        "SQM",
+        "NOS"
+      ]
+    },
+    "scope": {
+      "type": "integer",
+      "required": false,
+      "max": 100,
+      "min": 0
+    },
+    "bl_project_start": {
+      "type": "date",
+      "required": false
+    },
+    "bl_project_finish": {
+      "type": "date",
+      "required": false
+    },
+    "completed": {
+      "type": "integer",
+      "required": false,
+      "max": 100,
+      "min": 0
+    },
+    "project": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::project.project"
+    },
+    "task": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::task.task"
+    }
+  }
+}

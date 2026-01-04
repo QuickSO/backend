@@ -1,0 +1,29 @@
+{
+  "kind": "collectionType",
+  "collectionName": "location_types",
+  "info": {
+    "singularName": "location-type",
+    "pluralName": "location-types",
+    "displayName": "Location Type"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "uid": {
+      "type": "string"
+    },
+    "creator": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    }
+  }
+}

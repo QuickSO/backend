@@ -1,0 +1,29 @@
+{
+  "kind": "collectionType",
+  "collectionName": "vendor_groups",
+  "info": {
+    "singularName": "vendor-group",
+    "pluralName": "vendor-groups",
+    "displayName": "Vendor Group"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "uid": {
+      "type": "string"
+    },
+    "creator": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    }
+  }
+}

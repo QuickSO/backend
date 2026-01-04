@@ -1,0 +1,29 @@
+{
+  "kind": "collectionType",
+  "collectionName": "material_units",
+  "info": {
+    "singularName": "material-unit",
+    "pluralName": "material-units",
+    "displayName": "Material Unit"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "uid": {
+      "type": "string"
+    },
+    "creator": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    }
+  }
+}

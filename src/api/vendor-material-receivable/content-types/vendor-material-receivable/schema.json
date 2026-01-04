@@ -1,0 +1,126 @@
+{
+  "kind": "collectionType",
+  "collectionName": "vendor_material_receivables",
+  "info": {
+    "singularName": "vendor-material-receivable",
+    "pluralName": "vendor-material-receivables",
+    "displayName": "Vendor Material Receivable",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "location": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::location.location"
+    },
+    "remarks": {
+      "type": "richtext"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "uid": {
+      "type": "string"
+    },
+    "creator": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "po_no": {
+      "type": "string"
+    },
+    "eway_no": {
+      "type": "string"
+    },
+    "vehicle_no": {
+      "type": "string"
+    },
+    "order_date": {
+      "type": "date"
+    },
+    "received_date": {
+      "type": "date"
+    },
+    "grn_no": {
+      "type": "string"
+    },
+    "employee": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::employee.employee"
+    },
+    "material_quality": {
+      "type": "decimal",
+      "default": 0
+    },
+    "corrective_actions": {
+      "type": "decimal",
+      "default": 0
+    },
+    "prompt_reply": {
+      "type": "decimal",
+      "default": 0
+    },
+    "delivery_quality": {
+      "type": "decimal",
+      "default": 0
+    },
+    "quality_systems": {
+      "type": "decimal",
+      "default": 0
+    },
+    "commercial_posture": {
+      "type": "decimal",
+      "default": 0
+    },
+    "is_deleted": {
+      "type": "boolean",
+      "default": false
+    },
+    "purchase_order": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::vendor-quotation.vendor-quotation"
+    },
+    "project": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::project.project"
+    },
+    "material_item": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::material-item.material-item"
+    },
+    "material_unit": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::material-unit.material-unit"
+    },
+    "received_quantity": {
+      "type": "decimal",
+      "default": 0
+    },
+    "balance_quantity": {
+      "type": "decimal",
+      "default": 0
+    },
+    "return_replace_quantity": {
+      "type": "decimal",
+      "default": 0
+    },
+    "vendor": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::vendor.vendor"
+    },
+    "quantity_type": {
+      "type": "string"
+    }
+  }
+}

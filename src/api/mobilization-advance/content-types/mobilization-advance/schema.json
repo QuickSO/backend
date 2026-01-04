@@ -1,0 +1,88 @@
+{
+  "kind": "collectionType",
+  "collectionName": "mobilization_advances",
+  "info": {
+    "singularName": "mobilization-advance",
+    "pluralName": "mobilization-advances",
+    "displayName": "Mobilization Advance",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "procurement": {
+      "type": "enumeration",
+      "enum": [
+        "vendor",
+        "sub_contractor",
+        "agency"
+      ]
+    },
+    "vendor_purchase_order": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::vendor-purchase-order.vendor-purchase-order"
+    },
+    "agency_work_order": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::agency-work-order.agency-work-order"
+    },
+    "sub_contractor_work_order": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::sub-contractor-work-order.sub-contractor-work-order"
+    },
+    "order_value": {
+      "type": "string"
+    },
+    "mobilization_advance_5": {
+      "type": "string"
+    },
+    "bill_value_15": {
+      "type": "string"
+    },
+    "work_done_70": {
+      "type": "string"
+    },
+    "mobilization_advance_recovered": {
+      "type": "string"
+    },
+    "recovery_factor": {
+      "type": "decimal"
+    },
+    "cummulative_amount": {
+      "type": "decimal"
+    },
+    "cummulative_bill_15": {
+      "type": "decimal"
+    },
+    "recovery_amount": {
+      "type": "decimal"
+    },
+    "mobilization_advance_recovery": {
+      "type": "decimal"
+    },
+    "prev_mobilization_recovered": {
+      "type": "decimal"
+    },
+    "received_invoice": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::received-invoice.received-invoice"
+    },
+    "vendor_quotation": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::vendor-quotation.vendor-quotation"
+    },
+    "current_bill_recovery": {
+      "type": "decimal"
+    },
+    "advance_given": {
+      "type": "decimal"
+    }
+  }
+}

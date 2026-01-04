@@ -1,0 +1,44 @@
+{
+  "kind": "collectionType",
+  "collectionName": "app_roles",
+  "info": {
+    "singularName": "app-role",
+    "pluralName": "app-roles",
+    "displayName": "App Role",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "uid": {
+      "type": "string"
+    },
+    "creator": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "permissions": {
+      "type": "json"
+    },
+    "user_type": {
+      "type": "enumeration",
+      "enum": [
+        "General",
+        "Employee",
+        "Partner",
+        "Vendor",
+        "Agency",
+        "Sub-contractor"
+      ]
+    }
+  }
+}

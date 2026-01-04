@@ -1,0 +1,69 @@
+{
+  "kind": "collectionType",
+  "collectionName": "hand_tools",
+  "info": {
+    "singularName": "hand-tool",
+    "pluralName": "hand-tools",
+    "displayName": "Hand Tool",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "no": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "tool_type": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::tool-type.tool-type"
+    },
+    "model": {
+      "type": "string"
+    },
+    "condition": {
+      "type": "string"
+    },
+    "employee": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::employee.employee"
+    },
+    "used_by": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::employee.employee"
+    },
+    "uid": {
+      "type": "string"
+    },
+    "creator": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "location": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::location.location"
+    },
+    "project": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::project.project"
+    },
+    "manufacturer": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::manufacturer.manufacturer"
+    },
+    "description": {
+      "type": "richtext"
+    }
+  }
+}

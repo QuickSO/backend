@@ -1,0 +1,64 @@
+{
+  "kind": "collectionType",
+  "collectionName": "material_items",
+  "info": {
+    "singularName": "material-item",
+    "pluralName": "material-items",
+    "displayName": "Material Item",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "uid": {
+      "type": "string"
+    },
+    "creator": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "sku": {
+      "type": "string"
+    },
+    "material_group": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::material-group.material-group"
+    },
+    "material_unit": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::material-unit.material-unit"
+    },
+    "hsn_code": {
+      "type": "string"
+    },
+    "minimum": {
+      "type": "integer"
+    },
+    "material_brand": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::material-brand.material-brand"
+    },
+    "material_image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

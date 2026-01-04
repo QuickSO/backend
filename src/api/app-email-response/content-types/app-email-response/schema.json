@@ -1,0 +1,50 @@
+{
+  "kind": "collectionType",
+  "collectionName": "app_email_responses",
+  "info": {
+    "singularName": "app-email-response",
+    "pluralName": "app-email-responses",
+    "displayName": "App Email Response"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "uid": {
+      "type": "string"
+    },
+    "creator": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "sender": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::employee.employee"
+    },
+    "attachment": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "app_email": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::app-email.app-email"
+    },
+    "content": {
+      "type": "richtext"
+    },
+    "is_deleted": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

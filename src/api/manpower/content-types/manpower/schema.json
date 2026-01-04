@@ -1,0 +1,51 @@
+{
+  "kind": "collectionType",
+  "collectionName": "manpowers",
+  "info": {
+    "singularName": "manpower",
+    "pluralName": "manpowers",
+    "displayName": "Manpower",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "uid": {
+      "type": "string"
+    },
+    "notes": {
+      "type": "richtext"
+    },
+    "creator": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "attachment": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "labour": {
+      "type": "string"
+    },
+    "manpower_type": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::manpower-type.manpower-type"
+    },
+    "project_location": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::location.location"
+    }
+  }
+}

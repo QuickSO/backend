@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_permissions_permissions",
+  "info": {
+    "displayName": "permissions",
+    "icon": "user-shield"
+  },
+  "options": {},
+  "attributes": {
+    "code": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    }
+  }
+}

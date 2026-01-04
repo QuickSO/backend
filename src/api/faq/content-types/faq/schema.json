@@ -1,0 +1,40 @@
+{
+  "kind": "collectionType",
+  "collectionName": "faqs",
+  "info": {
+    "singularName": "faq",
+    "pluralName": "faqs",
+    "displayName": "FAQ",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "module": {
+      "type": "enumeration",
+      "enum": [
+        "general",
+        "quick-projects",
+        "quick-teams",
+        "quick-stock",
+        "quick-talk"
+      ]
+    },
+    "question": {
+      "type": "text"
+    },
+    "answer": {
+      "type": "richtext"
+    },
+    "is_active": {
+      "type": "boolean",
+      "default": true
+    },
+    "is_deleted": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

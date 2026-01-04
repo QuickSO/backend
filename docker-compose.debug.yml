@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  quicksobackend:
+    image: quicksobackend
+    build:
+      context: .
+      dockerfile: ./Dockerfile

@@ -1,0 +1,82 @@
+{
+  "kind": "collectionType",
+  "collectionName": "released_notes",
+  "info": {
+    "singularName": "released-note",
+    "pluralName": "released-notes",
+    "displayName": "Released Note",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "mrn_no": {
+      "type": "string"
+    },
+    "location": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::location.location"
+    },
+    "uid": {
+      "type": "string"
+    },
+    "creator": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "remarks": {
+      "type": "richtext"
+    },
+    "material_item": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::material-item.material-item"
+    },
+    "material_unit": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::material-unit.material-unit"
+    },
+    "quantity": {
+      "type": "decimal"
+    },
+    "required_quantity": {
+      "type": "decimal"
+    },
+    "in_stock_quantity": {
+      "type": "decimal"
+    },
+    "approved_by": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::employee.employee"
+    },
+    "creation_employee": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::employee.employee"
+    },
+    "project": {
+      "type": "integer"
+    },
+    "task": {
+      "type": "integer"
+    },
+    "stock_ledger": {
+      "type": "integer"
+    },
+    "task_material": {
+      "type": "integer"
+    },
+    "released_quantity": {
+      "type": "integer"
+    },
+    "released_histories": {
+      "type": "json"
+    }
+  }
+}

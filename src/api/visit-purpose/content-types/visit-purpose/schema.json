@@ -1,0 +1,29 @@
+{
+  "kind": "collectionType",
+  "collectionName": "visit_purposes",
+  "info": {
+    "singularName": "visit-purpose",
+    "pluralName": "visit-purposes",
+    "displayName": "Visit Purpose"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "uid": {
+      "type": "string"
+    },
+    "creator": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    }
+  }
+}

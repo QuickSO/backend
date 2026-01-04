@@ -1,0 +1,52 @@
+{
+  "kind": "collectionType",
+  "collectionName": "budget_tracker_phases",
+  "info": {
+    "singularName": "budget-tracker-phase",
+    "pluralName": "budget-tracker-phases",
+    "displayName": "Budget Tracker Phase"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "milestone": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::task.task"
+    },
+    "sub_milestone": {
+      "type": "json"
+    },
+    "total_estimated_budget": {
+      "type": "decimal"
+    },
+    "total_actual_budget": {
+      "type": "decimal"
+    },
+    "carpet_area": {
+      "type": "decimal"
+    },
+    "construction_area": {
+      "type": "decimal"
+    },
+    "carpet_area_cost": {
+      "type": "decimal"
+    },
+    "construction_area_cost": {
+      "type": "decimal"
+    },
+    "allocated_budget": {
+      "type": "decimal"
+    },
+    "description": {
+      "type": "text"
+    },
+    "budget_tracker": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::budget-tracker.budget-tracker"
+    }
+  }
+}

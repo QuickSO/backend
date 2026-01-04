@@ -1,0 +1,43 @@
+{
+  "kind": "collectionType",
+  "collectionName": "work_items",
+  "info": {
+    "singularName": "work-item",
+    "pluralName": "work-items",
+    "displayName": "Work Item",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "uid": {
+      "type": "string"
+    },
+    "creator": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "code": {
+      "type": "string"
+    },
+    "work_group": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::work-group.work-group"
+    },
+    "work_unit": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::work-unit.work-unit"
+    }
+  }
+}

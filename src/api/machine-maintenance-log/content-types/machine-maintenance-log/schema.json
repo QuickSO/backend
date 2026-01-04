@@ -1,0 +1,68 @@
+{
+  "kind": "collectionType",
+  "collectionName": "machine_maintenance_logs",
+  "info": {
+    "singularName": "machine-maintenance-log",
+    "pluralName": "machine-maintenance-logs",
+    "displayName": "Machine Maintenance Log",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "no": {
+      "type": "string"
+    },
+    "date": {
+      "type": "date"
+    },
+    "last_service_date": {
+      "type": "date"
+    },
+    "validation_date": {
+      "type": "date"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "machine": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::machine.machine"
+    },
+    "remarks": {
+      "type": "richtext"
+    },
+    "label": {
+      "type": "string"
+    },
+    "performed_by": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::employee.employee"
+    },
+    "manufacturer": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::manufacturer.manufacturer"
+    },
+    "contact": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::contact.contact"
+    },
+    "purchased_date": {
+      "type": "date"
+    },
+    "due_date": {
+      "type": "date"
+    },
+    "allotted_to": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::employee.employee"
+    }
+  }
+}

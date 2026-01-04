@@ -1,0 +1,26 @@
+{
+  "kind": "collectionType",
+  "collectionName": "released_form_histories",
+  "info": {
+    "singularName": "released-form-history",
+    "pluralName": "released-form-histories",
+    "displayName": "Released Form History"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "released_note": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::released-note.released-note"
+    },
+    "quantity": {
+      "type": "integer"
+    },
+    "remarks": {
+      "type": "richtext"
+    }
+  }
+}

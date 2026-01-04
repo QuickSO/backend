@@ -1,0 +1,73 @@
+{
+  "kind": "collectionType",
+  "collectionName": "app_users",
+  "info": {
+    "singularName": "app-user",
+    "pluralName": "app-users",
+    "displayName": "App User",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "username": {
+      "type": "string",
+      "unique": true
+    },
+    "uid": {
+      "type": "string"
+    },
+    "creator": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "app_roles": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::app-role.app-role"
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "Active",
+        "Inactive"
+      ],
+      "default": "Active"
+    },
+    "user_type": {
+      "type": "enumeration",
+      "enum": [
+        "Employee",
+        "Partner",
+        "Agency",
+        "Sub-contractor",
+        "Vendor"
+      ]
+    },
+    "is_deleted": {
+      "type": "boolean",
+      "default": false
+    },
+    "is_admin": {
+      "type": "boolean",
+      "default": false
+    },
+    "client_uid": {
+      "type": "string"
+    },
+    "email_1": {
+      "type": "email"
+    },
+    "currency_symbol": {
+      "type": "string",
+      "default": "₹"
+    },
+    "currency": {
+      "type": "string",
+      "default": "INR"
+    }
+  }
+}

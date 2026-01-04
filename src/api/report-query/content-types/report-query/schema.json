@@ -1,0 +1,35 @@
+{
+  "kind": "collectionType",
+  "collectionName": "report_queries",
+  "info": {
+    "singularName": "report-query",
+    "pluralName": "report-queries",
+    "displayName": "Report Query",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "code": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "query_string": {
+      "type": "text",
+      "private": true
+    },
+    "module": {
+      "type": "enumeration",
+      "enum": [
+        "quick-projects",
+        "quick-teams",
+        "quick-talks",
+        "quick-stock"
+      ]
+    }
+  }
+}

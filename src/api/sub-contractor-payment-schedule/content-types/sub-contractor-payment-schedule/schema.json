@@ -1,0 +1,67 @@
+{
+  "kind": "collectionType",
+  "collectionName": "sub_contractor_payment_schedules",
+  "info": {
+    "singularName": "sub-contractor-payment-schedule",
+    "pluralName": "sub-contractor-payment-schedules",
+    "displayName": "Sub Contractor Payment Schedule",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "uid": {
+      "type": "string"
+    },
+    "creator": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "heading": {
+      "type": "string"
+    },
+    "work_group": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::work-group.work-group"
+    },
+    "amount": {
+      "type": "decimal"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "scheduled_date": {
+      "type": "date"
+    },
+    "sub_contractor": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::sub-contractor.sub-contractor"
+    },
+    "approved_by": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::employee.employee"
+    },
+    "approval_remarks": {
+      "type": "richtext"
+    },
+    "creation_employee": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::employee.employee"
+    },
+    "payment_schedule": {
+      "type": "json"
+    },
+    "project": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::project.project"
+    }
+  }
+}

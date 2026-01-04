@@ -1,0 +1,23 @@
+{
+  "kind": "collectionType",
+  "collectionName": "otps",
+  "info": {
+    "singularName": "otp",
+    "pluralName": "otps",
+    "displayName": "OTP"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "email": {
+      "type": "email"
+    },
+    "otp": {
+      "type": "string"
+    },
+    "expiry": {
+      "type": "datetime"
+    }
+  }
+}

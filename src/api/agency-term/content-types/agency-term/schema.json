@@ -1,0 +1,63 @@
+{
+  "kind": "collectionType",
+  "collectionName": "agency_terms",
+  "info": {
+    "singularName": "agency-term",
+    "pluralName": "agency-terms",
+    "displayName": "Agency Term",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "uid": {
+      "type": "string"
+    },
+    "creator": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "work_group": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::work-group.work-group"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "agency": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::agency.agency"
+    },
+    "approved_by": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::employee.employee"
+    },
+    "approval_remarks": {
+      "type": "richtext"
+    },
+    "work_item": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::work-item.work-item"
+    },
+    "work_unit": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::work-unit.work-unit"
+    },
+    "creation_employee": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::employee.employee"
+    }
+  }
+}

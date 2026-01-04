@@ -1,0 +1,70 @@
+{
+  "kind": "collectionType",
+  "collectionName": "project_groups",
+  "info": {
+    "singularName": "project-group",
+    "pluralName": "project-groups",
+    "displayName": "Project Group",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "uid": {
+      "type": "string"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "creator": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "progress": {
+      "type": "decimal"
+    },
+    "start_date": {
+      "type": "date"
+    },
+    "end_date": {
+      "type": "date"
+    },
+    "sanctioned_budget": {
+      "type": "decimal"
+    },
+    "estimated_budget": {
+      "type": "decimal"
+    },
+    "visible": {
+      "type": "boolean"
+    },
+    "project": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::project.project"
+    },
+    "color": {
+      "type": "string"
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "Pending",
+        "Active",
+        "On Hold",
+        "Completed"
+      ]
+    },
+    "parent": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::project-group.project-group"
+    }
+  }
+}

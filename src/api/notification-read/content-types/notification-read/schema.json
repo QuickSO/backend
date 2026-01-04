@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "notification_reads",
+  "info": {
+    "singularName": "notification-read",
+    "pluralName": "notification-reads",
+    "displayName": "Notification Read"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "notification": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::notification.notification"
+    },
+    "employee": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::employee.employee"
+    },
+    "read_at": {
+      "type": "datetime"
+    }
+  }
+}

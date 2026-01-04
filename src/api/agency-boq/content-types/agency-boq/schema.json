@@ -1,0 +1,21 @@
+{
+  "kind": "collectionType",
+  "collectionName": "agency_boqs",
+  "info": {
+    "singularName": "agency-boq",
+    "pluralName": "agency-boqs",
+    "displayName": "Agency Boq"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "boq_item": {
+      "type": "json"
+    }
+  }
+}

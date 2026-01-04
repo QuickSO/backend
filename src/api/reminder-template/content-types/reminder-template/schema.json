@@ -1,0 +1,45 @@
+{
+  "kind": "collectionType",
+  "collectionName": "reminder_templates",
+  "info": {
+    "singularName": "reminder-template",
+    "pluralName": "reminder-templates",
+    "displayName": "Reminder Template"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "uid": {
+      "type": "string"
+    },
+    "creator": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "date": {
+      "type": "date"
+    },
+    "time": {
+      "type": "time"
+    },
+    "frequency": {
+      "type": "enumeration",
+      "enum": [
+        "Daily",
+        "Weekly",
+        "Monthly",
+        "Yearly",
+        "Only Once"
+      ]
+    }
+  }
+}

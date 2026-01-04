@@ -1,0 +1,29 @@
+{
+  "kind": "collectionType",
+  "collectionName": "construction_sites",
+  "info": {
+    "singularName": "construction-site",
+    "pluralName": "construction-sites",
+    "displayName": "Construction Site"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "uid": {
+      "type": "string"
+    },
+    "creator": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    }
+  }
+}

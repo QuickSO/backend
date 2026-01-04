@@ -1,0 +1,53 @@
+{
+  "kind": "collectionType",
+  "collectionName": "reimburses",
+  "info": {
+    "singularName": "reimburse",
+    "pluralName": "reimburses",
+    "displayName": "Reimburse"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "date": {
+      "type": "date"
+    },
+    "particular": {
+      "type": "string"
+    },
+    "employee": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::employee.employee"
+    },
+    "uid": {
+      "type": "string"
+    },
+    "creator": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "amount": {
+      "type": "decimal"
+    },
+    "quantity": {
+      "type": "decimal"
+    },
+    "attachment": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "remarks": {
+      "type": "richtext"
+    }
+  }
+}

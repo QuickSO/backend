@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "file_item_logs",
+  "info": {
+    "singularName": "file-item-log",
+    "pluralName": "file-item-logs",
+    "displayName": "File Item Log",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "actor_uid": {
+      "type": "string"
+    },
+    "uid": {
+      "type": "string"
+    },
+    "event_name": {
+      "type": "string"
+    },
+    "event_data": {
+      "type": "json"
+    },
+    "file_item": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::file-item.file-item"
+    }
+  }
+}

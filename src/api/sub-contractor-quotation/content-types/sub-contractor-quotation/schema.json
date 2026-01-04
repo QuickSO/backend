@@ -1,0 +1,142 @@
+{
+  "kind": "collectionType",
+  "collectionName": "sub_contractor_quotations",
+  "info": {
+    "singularName": "sub-contractor-quotation",
+    "pluralName": "sub-contractor-quotations",
+    "displayName": "Sub Contractor Quotation",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "uid": {
+      "type": "string"
+    },
+    "sub_contractor": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::sub-contractor.sub-contractor"
+    },
+    "creator": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "project": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::project.project"
+    },
+    "working_address": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::location.location"
+    },
+    "work_group": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::work-group.work-group"
+    },
+    "budget": {
+      "type": "decimal"
+    },
+    "estimated_amount": {
+      "type": "decimal"
+    },
+    "term": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::sub-contractor-term.sub-contractor-term"
+    },
+    "payment_schedule": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::sub-contractor-payment-schedule.sub-contractor-payment-schedule"
+    },
+    "remarks": {
+      "type": "richtext"
+    },
+    "urgency_level": {
+      "type": "enumeration",
+      "enum": ["Low", "Medium", "High"]
+    },
+    "heading": {
+      "type": "string"
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": ["Pending", "Approved"],
+      "default": "Pending"
+    },
+    "approved_by": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::employee.employee"
+    },
+    "approval_remarks": {
+      "type": "richtext"
+    },
+    "creation_employee": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::employee.employee"
+    },
+    "delivery_address": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::location.location"
+    },
+    "sub_contractor_term": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::sub-contractor-term.sub-contractor-term"
+    },
+    "work_items_remarks": {
+      "type": "richtext"
+    },
+    "payment_schedules_remarks": {
+      "type": "richtext"
+    },
+    "terms_remarks": {
+      "type": "richtext"
+    },
+    "terms": {
+      "type": "json"
+    },
+    "payment_schedules": {
+      "type": "json"
+    },
+    "work_items": {
+      "type": "json"
+    },
+    "expected_delivery_date": {
+      "type": "date"
+    },
+    "delivery_date": {
+      "type": "date"
+    },
+    "work_item_notes": {
+      "type": "json"
+    },
+    "grand_total_amount": {
+      "type": "decimal"
+    },
+    "is_deleted": {
+      "type": "boolean",
+      "default": false
+    },
+    "sc_requirement_form": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::sub-contractor-requirement-form.sub-contractor-requirement-form"
+    },
+    "sc_payment_schedule": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::sub-contractor-payment-schedule.sub-contractor-payment-schedule"
+    }
+  }
+}

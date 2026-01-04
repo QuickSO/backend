@@ -1,0 +1,36 @@
+{
+  "kind": "collectionType",
+  "collectionName": "work_order_groups",
+  "info": {
+    "singularName": "work-order-group",
+    "pluralName": "work-order-groups",
+    "displayName": "Work Order Group",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "uid": {
+      "type": "string"
+    },
+    "creator": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "code": {
+      "type": "string"
+    },
+    "sac_code": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,206 @@
+{
+  "kind": "collectionType",
+  "collectionName": "employees",
+  "info": {
+    "singularName": "employee",
+    "pluralName": "employees",
+    "displayName": "Employee",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "first_name": {
+      "type": "string"
+    },
+    "last_name": {
+      "type": "string"
+    },
+    "uid": {
+      "type": "string"
+    },
+    "creator": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "middle_name": {
+      "type": "string"
+    },
+    "pin_code": {
+      "type": "string"
+    },
+    "department": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::department.department"
+    },
+    "city": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::city.city"
+    },
+    "state": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::state.state"
+    },
+    "job_title": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::job-title.job-title"
+    },
+    "is_online": {
+      "type": "boolean",
+      "default": false
+    },
+    "joining_date": {
+      "type": "date"
+    },
+    "photo": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "last_online_at": {
+      "type": "datetime"
+    },
+    "address_line_1": {
+      "type": "string"
+    },
+    "address_line_2": {
+      "type": "string"
+    },
+    "phone_number_1": {
+      "type": "string"
+    },
+    "phone_number_2": {
+      "type": "string"
+    },
+    "mobile_number_1": {
+      "type": "string"
+    },
+    "mobile_number_2": {
+      "type": "string"
+    },
+    "email_1": {
+      "type": "string"
+    },
+    "email_2": {
+      "type": "string"
+    },
+    "std_code": {
+      "type": "string"
+    },
+    "anniversary_date": {
+      "type": "date"
+    },
+    "gender": {
+      "type": "enumeration",
+      "enum": [
+        "Male",
+        "Female"
+      ]
+    },
+    "resignation_date": {
+      "type": "date"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "designation": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::designation.designation"
+    },
+    "birthdate": {
+      "type": "date"
+    },
+    "initial": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::initial.initial"
+    },
+    "is_deleted": {
+      "type": "boolean",
+      "default": false
+    },
+    "working_days": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::working-day.working-day"
+    },
+    "attendance_mode": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::attendance-mode.attendance-mode"
+    },
+    "in_time": {
+      "type": "time"
+    },
+    "out_time": {
+      "type": "time"
+    },
+    "basic_salary": {
+      "type": "decimal",
+      "default": 0
+    },
+    "hra": {
+      "type": "decimal",
+      "default": 0
+    },
+    "bonus": {
+      "type": "decimal",
+      "default": 0
+    },
+    "conveyance": {
+      "type": "decimal",
+      "default": 0
+    },
+    "reimbursement": {
+      "type": "decimal",
+      "default": 0
+    },
+    "other_allowances": {
+      "type": "decimal",
+      "default": 0
+    },
+    "tds": {
+      "type": "decimal",
+      "default": 0
+    },
+    "esi": {
+      "type": "decimal",
+      "default": 0
+    },
+    "pf": {
+      "type": "decimal",
+      "default": 0
+    },
+    "advanced_loan": {
+      "type": "decimal",
+      "default": 0
+    },
+    "other_deduction": {
+      "type": "decimal",
+      "default": 0
+    },
+    "qualifications": {
+      "type": "json"
+    },
+    "documents": {
+      "type": "json"
+    },
+    "no": {
+      "type": "string"
+    }
+  }
+}

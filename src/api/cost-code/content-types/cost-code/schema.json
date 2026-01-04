@@ -1,0 +1,29 @@
+{
+  "kind": "collectionType",
+  "collectionName": "cost_codes",
+  "info": {
+    "singularName": "cost-code",
+    "pluralName": "cost-codes",
+    "displayName": "Cost Code"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "creator": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "uid": {
+      "type": "string"
+    }
+  }
+}

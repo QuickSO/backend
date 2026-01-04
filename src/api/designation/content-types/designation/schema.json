@@ -1,0 +1,34 @@
+{
+  "kind": "collectionType",
+  "collectionName": "designations",
+  "info": {
+    "singularName": "designation",
+    "pluralName": "designations",
+    "displayName": "Designation"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "creator": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "department": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::department.department"
+    },
+    "uid": {
+      "type": "string"
+    }
+  }
+}

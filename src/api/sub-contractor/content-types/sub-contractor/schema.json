@@ -1,0 +1,239 @@
+{
+  "kind": "collectionType",
+  "collectionName": "sub_contractors",
+  "info": {
+    "singularName": "sub-contractor",
+    "pluralName": "sub-contractors",
+    "displayName": "Sub Contractor",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "uid": {
+      "type": "string"
+    },
+    "creator": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "sub_contractor_group": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::sub-contractor-group.sub-contractor-group"
+    },
+    "firm_type": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::firm-type.firm-type"
+    },
+    "no": {
+      "type": "string"
+    },
+    "remarks": {
+      "type": "richtext"
+    },
+    "logo": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "header": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "organization_name": {
+      "type": "string"
+    },
+    "contact_person": {
+      "type": "string"
+    },
+    "address_line_1": {
+      "type": "string"
+    },
+    "address_line_2": {
+      "type": "string"
+    },
+    "phone_number_1": {
+      "type": "string"
+    },
+    "phone_number_2": {
+      "type": "string"
+    },
+    "mobile_number_1": {
+      "type": "string"
+    },
+    "mobile_number_2": {
+      "type": "string"
+    },
+    "email_1": {
+      "type": "string"
+    },
+    "email_2": {
+      "type": "string"
+    },
+    "website": {
+      "type": "string"
+    },
+    "state": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::state.state"
+    },
+    "city": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::city.city"
+    },
+    "pin_code": {
+      "type": "string"
+    },
+    "std_code": {
+      "type": "string"
+    },
+    "job_titles": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::job-title.job-title"
+    },
+    "registration_no": {
+      "type": "string"
+    },
+    "pan_no": {
+      "type": "string"
+    },
+    "gsin_no": {
+      "type": "string"
+    },
+    "account_no": {
+      "type": "string"
+    },
+    "bank": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::bank.bank"
+    },
+    "branch": {
+      "type": "string"
+    },
+    "ifsc_code": {
+      "type": "string"
+    },
+    "micr_code": {
+      "type": "string"
+    },
+    "tds_type": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::tds-type.tds-type"
+    },
+    "gst_type": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::gst-type.gst-type"
+    },
+    "work_types": {
+      "type": "string"
+    },
+    "registration_document": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "pan_document": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "gsin_document": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "ifsc_document": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "micr_document": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "app_roles": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::app-role.app-role"
+    },
+    "is_deleted": {
+      "type": "boolean",
+      "default": false
+    },
+    "is_verified": {
+      "type": "boolean",
+      "default": false
+    },
+    "verified_by": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::employee.employee"
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "Pending",
+        "Approved"
+      ],
+      "default": "Pending"
+    }
+  }
+}
