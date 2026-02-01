@@ -125,6 +125,12 @@
     },
     "sub_milestone": {
       "type": "json"
+    },
+    "rfis": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::rfi.rfi",
+      "mappedBy": "task"
     }
   }
 }
