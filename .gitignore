@@ -1,7 +1,6 @@
 ############################
 # OS X
 ############################
-build/**
 .DS_Store
 .AppleDouble
 .LSOverride
