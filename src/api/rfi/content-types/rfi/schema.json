@@ -58,7 +58,8 @@
       "type": "string"
     },
     "rfi_number": {
-      "type": "string"
+      "type": "string",
+      "unique": true
     },
     "uid": {
       "type": "uid"
